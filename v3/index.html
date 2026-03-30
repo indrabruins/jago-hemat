@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jago Hemat — Selamatkan Makanan, Hemat Uang</title>
+<meta name="description" content="Makanan berkualitas hingga 80% lebih murah. Selamatkan makanan, hemat uang, selamatkan planet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Nunito",sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;outline:none}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.section-pad{padding:clamp(60px,10vw,120px) 0}
+.text-green{color:#01875f}.text-orange{color:#FF8642}.text-yellow{color:#FFD43B}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-weight:700;font-size:clamp(14px,2vw,17px);transition:all .25s;white-space:nowrap}
+.btn-primary{background:#01875f;color:#fff;box-shadow:0 4px 20px rgba(1,135,95,.4)}
+.btn-primary:hover{background:#015f44;transform:translateY(-2px);box-shadow:0 8px 30px rgba(1,135,95,.5)}
+.btn-orange{background:#FF8642;color:#fff;box-shadow:0 4px 20px rgba(255,134,66,.4)}
+.btn-orange:hover{background:#e06a28;transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+.btn-sm{padding:9px 20px;font-size:13px}
+.btn-lg{padding:18px 40px;font-size:clamp(15px,2.5vw,19px)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:50px;font-size:13px;font-weight:700}
+.badge-orange{background:rgba(255,134,66,.15);color:#FF8642;border:1px solid rgba(255,134,66,.3)}
+.badge-green{background:rgba(1,135,95,.15);color:#01875f;border:1px solid rgba(1,135,95,.3)}
+.badge-yellow{background:rgba(255,212,59,.15);color:#e6a800;border:1px solid rgba(255,212,59,.3)}
+:root{--green:#01875f;--green-dark:#015f44;--green-light:#02b383;--orange:#FF8642;--orange-dark:#e06a28;--yellow:#FFD43B;--cream:#FEFFD2;--dark-bg:#0D0D0F;--dark-card:#1a1a1f;--dark-card2:#22222a;--dark-border:#2a2a35;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.12);--shadow-lg:0 8px 40px rgba(0,0,0,.18);--radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--nav-h:72px}
+[data-theme=light]{--bg-primary:#fff;--bg-secondary:#FEFFD2;--bg-card:#fff;--bg-section-alt:#f8f9fa;--text-primary:#1a1a1a;--text-secondary:#555;--text-muted:#999}
+[data-theme=dark]{--bg-primary:#0D0D0F;--bg-secondary:#121218;--bg-card:#1a1a1f;--bg-section-alt:#22222a;--text-primary:#fff;--text-secondary:#ccc;--text-muted:#888}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;transition:background .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(13,13,15,.96);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.nav-inner{width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,40px);max-width:1200px;margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px}
+.nav-logo img{height:36px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:15px;font-weight:600;opacity:.8;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-cta{padding:10px 22px;font-size:15px}
+.nav-toggle{display:none;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.1);color:#fff;align-items:center;justify-content:center;font-size:20px;cursor:pointer;flex-shrink:0}
+.icon-btn{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;transition:background .2s;cursor:pointer}
+.icon-btn:hover{background:rgba(255,255,255,.18)}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-overlay.active{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:300px;background:#13131a;z-index:1001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:24px;display:flex;flex-direction:column;border-left:1px solid #2a2a35}
+.drawer.active{transform:translateX(0)}
+.drawer-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.drawer-close{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.drawer a{display:flex;align-items:center;gap:10px;padding:13px 14px;border-radius:12px;font-weight:700;font-size:16px;color:rgba(255,255,255,.72);transition:background .2s,color .2s}
+.drawer a:hover{background:rgba(255,255,255,.08);color:#fff}
+.drawer a.highlight{background:#01875f;color:#fff;margin-top:16px;justify-content:center}
+.drawer-divider{height:1px;background:rgba(255,255,255,.07);margin:8px 0}
+.floating-controls{position:fixed;bottom:24px;right:24px;z-index:900;display:flex;flex-direction:column;gap:8px}
+.floating-controls .icon-btn{width:48px;height:48px;font-size:20px;border-radius:50%;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--dark-bg);position:relative;overflow:hidden;padding-top:var(--nav-h)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 65% 50%,rgba(1,135,95,.13) 0%,transparent 65%),radial-gradient(ellipse at 25% 80%,rgba(255,134,66,.08) 0%,transparent 50%)}
+.hero-grid-bg{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,60px);align-items:center;padding:clamp(60px,8vw,100px) 0}
+.hero-content{max-width:min(580px,100%)}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.hero-title{font-size:clamp(32px,5.5vw,58px);font-weight:900;line-height:1.08;color:#fff;margin-bottom:20px;letter-spacing:-0.5px}
+.hero-title .hl-y{color:var(--yellow)}
+.hero-title .hl-g{color:var(--green)}
+.hero-sub{font-size:clamp(16px,2.2vw,21px);color:rgba(255,255,255,.68);margin-bottom:32px;line-height:1.65;max-width:520px}
+.hero-stats{display:flex;gap:14px;margin-bottom:32px;flex-wrap:wrap}
+.hero-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);padding:14px 18px;min-width:135px}
+.hero-stat-val{font-size:24px;font-weight:900;color:var(--orange);line-height:1}
+.hero-stat-lbl{font-size:12px;color:rgba(255,255,255,.48);margin-top:4px;font-weight:600}
+.hero-trust{display:flex;align-items:center;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.68);font-size:14px;font-weight:600}
+.trust-item .stars{color:var(--yellow)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-visual{position:relative}
+.hero-img-wrap{position:relative;border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-img-wrap img{width:100%;height:clamp(280px,45vw,480px);object-fit:cover}
+.hero-img-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.hero-live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:8px 16px;color:#fff;font-size:14px;font-weight:700}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse-anim 2s infinite;flex-shrink:0}
+@keyframes pulse-anim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.float-card{position:absolute;background:rgba(15,15,20,.92);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);border-radius:var(--radius-md);padding:14px 18px;animation:floatCard 6s ease-in-out infinite;box-shadow:0 10px 40px rgba(0,0,0,.4);color:#fff}
+.float-card-1{top:-20px;right:-30px;animation-delay:0s}
+.float-card-2{bottom:50px;left:-30px;animation-delay:2.5s}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-card-icon{font-size:20px;margin-bottom:6px}
+.float-card-val{font-size:22px;font-weight:900;line-height:1}
+.float-card-lbl{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:600}
+.section-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:700;background:rgba(1,135,95,.1);color:#01875f;border:1px solid rgba(1,135,95,.2);margin-bottom:16px}
+.section-title{font-size:clamp(26px,4vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px}
+.section-sub{font-size:clamp(15px,2vw,19px);color:var(--text-secondary);max-width:560px;line-height:1.7}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header .section-sub{margin:0 auto}
+.how{background:var(--bg-secondary)}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.how-step{background:var(--bg-card);border-radius:var(--radius-lg);padding:36px 24px;text-align:center;transition:transform .3s,box-shadow .3s;border:1px solid rgba(0,0,0,.06)}
+.how-step:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.how-step-num{width:52px;height:52px;border-radius:50%;background:#01875f;color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 16px rgba(1,135,95,.35)}
+.how-step-icon{font-size:48px;margin-bottom:16px}
+.how-step-title{font-size:19px;font-weight:800;margin-bottom:10px}
+.how-step-desc{font-size:15px;color:var(--text-secondary);line-height:1.65}
+.surprise-banner{margin-top:48px;background:linear-gradient(135deg,#01875f,#015f44);border-radius:var(--radius-xl);padding:clamp(24px,5vw,48px);display:flex;align-items:center;gap:32px;color:#fff}
+.surprise-icon{font-size:60px;flex-shrink:0}
+.surprise-banner h3{font-size:clamp(18px,3vw,26px);font-weight:900;margin-bottom:8px}
+.surprise-banner p{font-size:clamp(13px,2vw,17px);opacity:.85;line-height:1.6;max-width:580px}
+.deals{background:var(--bg-primary)}
+.deals-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px}
+.deals-live{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--orange)}
+.live-dot{width:10px;height:10px;border-radius:50%;background:var(--orange);animation:pulse-anim 1.5s infinite;flex-shrink:0}
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:20px}
+.deal-card{background:var(--bg-card);border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(0,0,0,.07);transition:transform .3s,box-shadow .3s;position:relative}
+.deal-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.deal-card-img{position:relative}
+.deal-card-img img{width:100%;height:clamp(140px,20vw,165px);object-fit:cover}
+.deal-badge{position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;padding:4px 9px;border-radius:50px}
+.deal-timer{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:50px}
+.deal-body{padding:14px}
+.deal-merchant{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.deal-name{font-size:15px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.deal-meta{display:flex;align-items:center;justify-content:space-between}
+.deal-price{display:flex;align-items:baseline;gap:7px}
+.deal-old{font-size:12px;color:var(--text-muted);text-decoration:line-through}
+.deal-new{font-size:19px;font-weight:900;color:#01875f}
+.deal-sold{font-size:11px;font-weight:700;color:var(--orange)}
+.deal-bar{height:4px;background:rgba(0,0,0,.07);border-radius:2px;margin-top:10px;overflow:hidden}
+.deal-fill{height:100%;background:linear-gradient(90deg,#FF8642,#FFD43B);border-radius:2px}
+.impact{background:var(--bg-secondary)}
+.impact-nums{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.impact-card-sm{background:var(--bg-card);border-radius:var(--radius-lg);padding:28px;border:1px solid rgba(0,0,0,.06)}
+.impact-val{font-size:clamp(32px,5vw,52px);font-weight:900;color:#01875f;line-height:1}
+.impact-lbl{font-size:15px;color:var(--text-secondary);margin-top:8px;font-weight:600}
+.impact-sub{font-size:12px;color:var(--text-muted);margin-top:4px}
+.impact-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.impact-big{background:linear-gradient(135deg,#01875f,#015f44);border-radius:var(--radius-xl);padding:clamp(24px,5vw,48px);color:#fff}
+.impact-big h3{font-size:clamp(20px,3vw,28px);font-weight:900;margin-bottom:24px}
+.impact-big-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+.ibs-val{font-size:clamp(24px,4vw,36px);font-weight:900;line-height:1}
+.ibs-lbl{font-size:13px;opacity:.8;margin-top:4px}
+.impact-big .btn-ghost{background:rgba(255,255,255,.18);color:#fff;border:2px solid rgba(255,255,255,.28)}
+.impact-big .btn-ghost:hover{background:rgba(255,255,255,.28)}
+.leaderboard{background:var(--bg-card);border-radius:var(--radius-lg);padding:28px;border:1px solid rgba(0,0,0,.06)}
+.leaderboard h4{font-size:17px;font-weight:800;margin-bottom:16px}
+.lb-item{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.lb-item:last-child{border-bottom:none}
+.lb-rank{width:28px;height:28px;border-radius:50%;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lb-rank.gold{background:#FFD43B;color:#7a5a00}
+.lb-rank.silver{background:#d0d0d0;color:#555}
+.lb-rank.bronze{background:#cd7f32;color:#fff}
+.lb-rank.def{background:rgba(0,0,0,.06);color:var(--text-muted)}
+.lb-name{font-weight:700;font-size:15px;flex:1}
+.lb-score{font-size:13px;font-weight:800;color:#01875f}
+.merchant{background:var(--bg-primary)}
+.merchant-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:56px}
+.merchant-feat{display:flex;gap:16px;align-items:flex-start;background:var(--bg-card);border-radius:var(--radius-md);padding:20px;border:1px solid rgba(0,0,0,.06);transition:transform .2s}
+.merchant-feat:hover{transform:translateX(6px)}
+.merchant-feat-icon{font-size:34px;flex-shrink:0}
+.merchant-feat h4{font-size:17px;font-weight:800;margin-bottom:4px}
+.merchant-feat p{font-size:14px;color:var(--text-secondary);line-height:1.5}
+.merchant-trust{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.merchant-steps{margin-top:24px}
+.ms{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+.ms-num{width:34px;height:34px;border-radius:50%;background:#01875f;color:#fff;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ms h4{font-size:16px;font-weight:800;margin-bottom:2px}
+.ms p{font-size:13px;color:var(--text-secondary)}
+.esg-panel{background:linear-gradient(135deg,#1a2a1e,#0f2015);border-radius:var(--radius-xl);padding:clamp(24px,5vw,48px);color:#fff;border:1px solid rgba(1,135,95,.18)}
+.esg-panel h3{font-size:clamp(20px,3vw,26px);font-weight:900;margin-bottom:6px}
+.esg-panel .sub{color:rgba(255,255,255,.5);font-size:14px;margin-bottom:28px}
+.esg-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+.esg-stat{background:rgba(255,255,255,.06);border-radius:var(--radius-md);padding:16px;border:1px solid rgba(255,255,255,.08)}
+.esg-stat-val{font-size:26px;font-weight:900;color:#FFD43B;line-height:1}
+.esg-stat-lbl{font-size:12px;color:rgba(255,255,255,.48);margin-top:4px}
+.testimonials{background:var(--bg-secondary)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.testi-card{background:var(--bg-card);border-radius:var(--radius-lg);padding:28px;border:1px solid rgba(0,0,0,.06);display:flex;flex-direction:column;gap:14px;transition:transform .3s,box-shadow .3s}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.testi-stars{color:#FFD43B;font-size:17px;letter-spacing:2px}
+.testi-text{font-size:15px;color:var(--text-secondary);line-height:1.7;flex:1}
+.testi-text strong{color:var(--text-primary)}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.testi-name{font-weight:800;font-size:15px}
+.testi-meta{font-size:12px;color:var(--text-muted)}
+.testi-saving{margin-left:auto;text-align:right}
+.testi-saving-val{font-size:18px;font-weight:900;color:#01875f}
+.testi-saving-lbl{font-size:11px;color:var(--text-muted);font-weight:600}
+.referral{background:linear-gradient(160deg,#0D0D0F 0%,#0c1f16 100%);color:#fff;position:relative;overflow:hidden}
+.referral::before{content:"";position:absolute;top:-40%;right:-15%;width:clamp(300px,50vw,600px);height:clamp(300px,50vw,600px);background:radial-gradient(circle,rgba(1,135,95,.12) 0%,transparent 70%);pointer-events:none}
+.referral-inner{position:relative;z-index:2}
+.referral-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:700;background:rgba(255,212,59,.12);color:#FFD43B;border:1px solid rgba(255,212,59,.2);margin-bottom:20px}
+.referral-title{font-size:clamp(28px,4.5vw,50px);font-weight:900;margin-bottom:16px;line-height:1.1}
+.referral-title .hl-y{color:#FFD43B}
+.referral-sub{font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,.58);max-width:520px;margin-bottom:48px;line-height:1.7}
+.ref-mech{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+.ref-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:24px 18px;text-align:center;transition:background .3s,border-color .3s}
+.ref-step:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15)}
+.ref-step-icon{font-size:40px;margin-bottom:12px}
+.ref-step-val{font-size:30px;font-weight:900;color:#FFD43B;margin-bottom:4px}
+.ref-step-title{font-size:14px;font-weight:700;margin-bottom:6px}
+.ref-step-desc{font-size:13px;color:rgba(255,255,255,.43);line-height:1.5}
+.ref-progress{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-xl);padding:clamp(22px,4vw,40px);display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.ref-prog-info{flex:1;min-width:200px}
+.ref-prog-label{font-size:15px;font-weight:700;margin-bottom:12px}
+.ref-prog-bar{background:rgba(255,255,255,.1);border-radius:50px;height:12px;overflow:hidden}
+.ref-prog-fill{height:100%;background:linear-gradient(90deg,#01875f,#02b383);border-radius:50px;transition:width 1s ease;min-width:4px}
+.ref-prog-status{font-size:13px;color:rgba(255,255,255,.5)}
+.app-cta{background:var(--bg-secondary);text-align:center}
+.app-cta-inner{max-width:640px;margin:0 auto}
+.store-badges{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.store-btn{display:flex;align-items:center;gap:12px;background:#111;color:#fff;border-radius:12px;padding:12px 24px;font-weight:700;transition:transform .2s,box-shadow .2s;border:1px solid rgba(255,255,255,.1)}
+.store-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.store-btn-icon{font-size:24px}
+.store-btn-text{text-align:left}
+.store-btn-text span{display:block;font-size:10px;font-weight:600;opacity:.7}
+.store-btn-text strong{font-size:16px}
+.cta-urgency{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px;flex-wrap:wrap}
+.cta-urgency span{font-size:14px;font-weight:700;color:var(--orange)}
+footer{background:#080810;color:rgba(255,255,255,.6);padding:60px 0 32px}
+footer a{color:rgba(255,255,255,.55);transition:color .2s}
+footer a:hover{color:#fff}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;color:#fff;margin-bottom:12px}
+.footer-brand img{height:34px}
+.footer-tagline{font-size:14px;line-height:1.6;max-width:260px}
+.footer-col h4{font-size:13px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:14px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:13px}
+.footer-socials{display:flex;gap:12px}
+.footer-social{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:background .2s}
+.footer-social:hover{background:rgba(255,255,255,.16)}
+@media(max-width:900px){
+.hero-inner{grid-template-columns:1fr;text-align:center}
+.hero-content{max-width:100%}
+.hero-eyebrow,.hero-sub,.hero-stats,.hero-trust,.hero-actions{justify-content:center}
+.hero-visual{order:-1;max-width:480px;margin:0 auto}
+.how-steps,.merchant-grid,.ref-mech,.impact-bottom{grid-template-columns:1fr}
+.esg-panel{order:-1}
+.testi-grid,.impact-nums{grid-template-columns:1fr 1fr}
+.deals-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+.nav-links{display:none}
+.nav-toggle{display:flex}
+.hero-title{font-size:clamp(28px,8vw,40px)}
+.float-card{display:none}
+.merchant-grid,.testi-grid,.footer-grid,.impact-bottom{grid-template-columns:1fr}
+.deals-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:380px){.deals-grid{grid-template-columns:1fr}}
+
+/* ── MERCHANT FORM ── */
+.biz-form-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:clamp(24px,4vw,40px);box-shadow:0 8px 32px rgba(0,0,0,.12);position:relative;overflow:hidden}
+.biz-form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#01875f,#FF8642)}
+.biz-form-hdr h3{font-size:clamp(18px,2vw,22px);font-weight:800;margin-bottom:6px}
+.biz-form-hdr p{font-size:14px;color:var(--text-muted)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:6px}
+.form-group input,.form-group select{width:100%;background:var(--bg-section-alt);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:15px;color:var(--text-primary);transition:border-color .2s,box-shadow .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:#01875f;box-shadow:0 0 0 3px rgba(1,135,95,.10)}
+.form-group input::placeholder{color:var(--text-muted)}
+.biz-submit{width:100%;padding:15px;background:linear-gradient(135deg,#01875f,#016046);border:none;border-radius:12px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px;transition:opacity .2s,transform .2s;box-shadow:0 4px 16px rgba(1,135,95,.30)}
+.biz-submit:hover{opacity:.88;transform:translateY(-1px)}
+.biz-submit:disabled{opacity:.5;cursor:not-allowed}
+.biz-trust-form{display:flex;justify-content:center;gap:16px;margin-top:14px;flex-wrap:wrap}
+.biz-trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted)}
+.biz-trust-item svg{width:14px;height:14px;stroke:#01875f;fill:none;stroke-width:2.5}
+.roi-calc{background:rgba(1,135,95,.06);border:1px solid rgba(1,135,95,.15);border-radius:14px;padding:16px;margin:16px 0}
+.roi-calc h4{font-size:13px;font-weight:700;color:#01875f;margin-bottom:12px}
+.calc-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px}
+.calc-row input{width:70px;padding:8px 10px;font-size:14px}
+.calc-row .amount{font-weight:800;color:#01875f;font-size:17px}
+
+/* ── FAQ ACCORDION ── */
+.faq-section{background:var(--bg-section-alt);padding:clamp(50px,8vw,80px) clamp(20px,5vw,40px);border-top:1px solid var(--border)}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-weight:600;font-size:clamp(14px,1.5vw,16px);color:var(--text-primary);transition:color .2s}
+.faq-q:hover{color:#01875f}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s,transform .3s}
+.faq-item.open .faq-icon{background:linear-gradient(135deg,#01875f,#016046);border-color:transparent;transform:rotate(45deg)}
+.faq-icon::before{content:'+';font-size:16px;font-weight:700;color:var(--text-muted);transition:color .2s}
+.faq-item.open .faq-icon::before{color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+.faq-a p{padding:0 0 20px;font-size:clamp(14px,1.5vw,15px);color:var(--text-secondary);line-height:1.7}
+.faq-item.open .faq-a{max-height:400px}
+.faq-item.featured{border:1px solid rgba(1,135,95,.20);border-radius:12px;padding:0 20px;margin-bottom:12px;background:rgba(1,135,95,.03)}
+.faq-item.featured .faq-q{color:#01875f}
+@media(max-width:640px){.calc-row{font-size:13px}.calc-row input{width:60px}.faq-section{padding:60px 24px}}
+@media(max-width:768px){.merchant-form-grid{grid-template-columns:1fr!important}}
+.merchant-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start;margin-top:40px}
+@media(max-width:640px){.merchant-grid{grid-template-columns:1fr!important}}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+<div class="nav-inner">
+<a href="#" class="nav-logo">
+<img src="assets/logo-real.png" alt="Jago Hemat" onerror="this.style.display="none";this.nextElementSibling.style.display="flex"">
+<span style="display:none;align-items:center;gap:8px;color:#fff;font-weight:900;font-size:22px">&#129382; Jago Hemat</span>
+</a>
+<div class="nav-links">
+<a href="#how">Cara Kerja</a>
+<a href="#deals">Promo Hari Ini</a>
+<a href="#impact">Dampak</a>
+<a href="#merchant">Mitra</a>
+<a href="#testimonials">Ulasan</a>
+</div>
+<div class="nav-right">
+<button class="icon-btn" id="langToggle" title="Ganti Bahasa">&#127760;</button>
+<button class="icon-btn" id="themeToggle" title="Tema">&#9790;</button>
+<a href="#download" class="btn btn-primary nav-cta">Unduh Gratis</a>
+<button class="nav-toggle" id="navToggleBtn" aria-label="Menu">&#9776;</button>
+</div>
+</div>
+</nav>
+
+<!-- DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+<div class="drawer-header">
+<span style="font-weight:900;font-size:18px;color:#fff;display:flex;align-items:center;gap:8px">&#129382; Jago Hemat</span>
+<button class="drawer-close" id="drawerClose">&#10005;</button>
+</div>
+<a href="#how" class="drawer-link">&#128203; Cara Kerja</a>
+<a href="#deals" class="drawer-link">&#128293; Promo Hari Ini</a>
+<a href="#impact" class="drawer-link">&#127793; Dampak Saya</a>
+<a href="#merchant" class="drawer-link">&#128722; Jadi Mitra</a>
+<a href="#testimonials" class="drawer-link">&#11088; Ulasan</a>
+<div class="drawer-divider"></div>
+<a href="#download" class="highlight">&#128229; Unduh Aplikasi</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-grid-bg"></div>
+<div class="container">
+<div class="hero-inner">
+<div class="hero-content">
+<div class="hero-eyebrow">
+<span class="badge badge-orange">&#127942; Indonesia #1 Food Waste in ASEAN</span>
+</div>
+<h1 class="hero-title">
+Indonesia <span class="hl-y">#1 Food Waste</span> di ASEAN.<br>
+Tapi <span class="hl-g">uangnya</span> untuk kamu.
+</h1>
+<p class="hero-sub">
+14.7 juta ton makanan terbuang tiap tahun. 44% masih bisa dimakan.<br>
+Setiap pesanan Jago Hemat = makanan terselamatkan + dompet aman.
+</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">14.7 JT</div><div class="hero-stat-lbl">ton food waste/tahun</div></div>
+<div class="hero-stat"><div class="hero-stat-val">44%</div><div class="hero-stat-lbl">masih edible</div></div>
+<div class="hero-stat"><div class="hero-stat-val">80%</div><div class="hero-stat-lbl">hemat per pesanan</div></div>
+</div>
+<div class="hero-trust">
+<div class="trust-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 App Store</div>
+<div class="trust-item">&#128228; 500K+ downloads</div>
+<div class="trust-item">&#127793; 10JT+ kg terselamatkan</div>
+</div>
+<div class="hero-actions">
+<a href="#download" class="btn btn-orange btn-lg">&#128229; Unduh Gratis &mdash; Dapat 3 Pengiriman Gratis!</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-img-wrap">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80" alt="Makanan berkualitas">
+<div class="hero-img-overlay">
+<span class="hero-live-badge">
+<span class="pulse-dot"></span>
+&#128293; 500+ paket tersedia hari ini
+</span>
+</div>
+</div>
+<div class="float-card float-card-1">
+<div class="float-card-icon">&#128176;</div>
+<div class="float-card-val">Rp 180.000</div>
+<div class="float-card-lbl">Hemat bulan ini</div>
+</div>
+<div class="float-card float-card-2">
+<div class="float-card-icon">&#127793;</div>
+<div class="float-card-val">12.4 kg</div>
+<div class="float-card-lbl">makanan diselamatkan</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how section-pad" id="how">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#128203; 3 Langkah Mudah</span>
+<h2 class="section-title">Cara Kerja Jago Hemat</h2>
+<p class="section-sub">Cuma 3 menit dari buka app sampai hemat. Tanpa rumit, tanpa ribet.</p>
+</div>
+<div class="how-steps">
+<div class="how-step">
+<div class="how-step-icon">&#128269;</div>
+<div class="how-step-num">1</div>
+<div class="how-step-title">Pilih Makanan</div>
+<div class="how-step-desc">Jelajahi ratusan makanan berkualitas dari restoran & toko terdekat. Filter berdasarkan lokasi, jenis, dan harga.</div>
+</div>
+<div class="how-step">
+<div class="how-step-icon">&#129300;</div>
+<div class="how-step-num">2</div>
+<div class="how-step-title">Beli Surprise Bag</div>
+<div class="how-step-desc">Paket makanan dengan harga hingga 80% lebih murah. Kamu tidak tahu persis apa isinya — tapi kualitasnya guaranteed.</div>
+</div>
+<div class="how-step">
+<div class="how-step-icon">&#127839;</div>
+<div class="how-step-num">3</div>
+<div class="how-step-title">Ambil & Hemat</div>
+<div class="how-step-desc">Tunjukkan kode di merchant, ambil makananmu, dan nikmati. Lingkungan senang, dompet senang.</div>
+</div>
+</div>
+<div class="surprise-banner">
+<div class="surprise-icon">&#129327;</div>
+<div>
+<h3>&#128161; Kenapa Surprise Bag?</h3>
+<p>Merchant menjual sisa makanan di luar jam sibuk dengan harga diskon. Kamu dapat makanan berkualitas — yang mereka tidak bisa simpan sampai besok. Murah untukmu, tidak terbuang untuk planet.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TODAY'S DEALS -->
+<section class="deals section-pad" id="deals">
+<div class="container">
+<div class="deals-header">
+<div>
+<span class="section-tag">&#128293; Promo Terbatas</span>
+<h2 class="section-title">Promo Hari Ini</h2>
+</div>
+<div class="deals-live">
+<span class="live-dot"></span>
+<span>Live &mdash; diperbarui setiap jam</span>
+</div>
+</div>
+<div class="deals-grid" id="dealsGrid">
+<!-- Deals injected by JS -->
+</div>
+</div>
+</section>
+
+<!-- IMPACT TRACKER -->
+<section class="impact section-pad" id="impact">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#127793; Kamu Membuat Perubahan</span>
+<h2 class="section-title">Dampak Nyata, Langsung Dari Tanganmu</h2>
+<p class="section-sub">Setiap pesanan = langkah kecil menuju dunia tanpa food waste.</p>
+</div>
+<div class="impact-nums">
+<div class="impact-card-sm">
+<div class="impact-val" id="impactFood">10.2 JT</div>
+<div class="impact-lbl">kg makanan diselamatkan</div>
+<div class="impact-sub">di seluruh Indonesia</div>
+</div>
+<div class="impact-card-sm">
+<div class="impact-val">21.5K</div>
+<div class="impact-lbl">ton CO2 dicegah</div>
+<div class="impact-sub">= 9.6 juta pohon tumbuh 1 tahun</div>
+</div>
+<div class="impact-card-sm">
+<div class="impact-val">Rp 4.2 M</div>
+<div class="impact-lbl">hemat dikembalikan ke pengguna</div>
+<div class="impact-sub">sejak launch</div>
+</div>
+<div class="impact-card-sm">
+<div class="impact-val">500+</div>
+<div class="impact-lbl">merchant aktif</div>
+<div class="impact-sub">di 12 kota</div>
+</div>
+</div>
+<div class="impact-bottom">
+<div class="impact-big">
+<h3>&#127793; &#34;You Did That&#34; — Dampak Personalmu</h3>
+<div class="impact-big-stats">
+<div>
+<div class="ibs-val" id="personalFood">12.4 kg</div>
+<div class="ibs-lbl">makanan yang kamu selamatkan</div>
+</div>
+<div>
+<div class="ibs-val">25.8 kg</div>
+<div class="ibs-lbl">CO2 yang kamu cegah</div>
+</div>
+<div>
+<div class="ibs-val">8 pohon</div>
+<div class="ibs-lbl">setara penanaman</div>
+</div>
+<div>
+<div class="ibs-val">Rp 840K</div>
+<div class="ibs-lbl">total hematmu</div>
+</div>
+</div>
+<a href="#" class="btn btn-ghost">&#128247; Bagikan Impact Card</a>
+</div>
+<div class="leaderboard">
+<h4>&#127941; Top Saver Communities</h4>
+<div class="lb-item"><div class="lb-rank gold">1</div><div class="lb-name">Jakarta Selatan</div><div class="lb-score">847 kg</div></div>
+<div class="lb-item"><div class="lb-rank silver">2</div><div class="lb-name">Bandung</div><div class="lb-score">634 kg</div></div>
+<div class="lb-item"><div class="lb-rank bronze">3</div><div class="lb-name">Surabaya</div><div class="lb-score">521 kg</div></div>
+<div class="lb-item"><div class="lb-rank def">4</div><div class="lb-name">Tangerang</div><div class="lb-score">398 kg</div></div>
+<div class="lb-item"><div class="lb-rank def">5</div><div class="lb-name">Bekasi</div><div class="lb-score">312 kg</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MERCHANT -->
+<section class="merchant section-pad" id="merchant">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#128722; Untuk Merchant</span>
+<h2 class="section-title">Dapur Anda, Penghasilan Baru</h2>
+<p class="section-sub">Ubah makanan sisa jadi pendapatan tambahan. Tanpa biaya awal, tanpa ribet.</p>
+</div>
+<div class="merchant-grid">
+<div>
+<div class="merchant-features">
+<div class="merchant-feat">
+<div class="merchant-feat-icon">&#128176;</div>
+<div>
+<h4>Pendapatan Extra, 0 Modal</h4>
+<p>Jual sisa makanan di luar jam sibuk. Dapat income tambahan dari stok yang akan expire.</p>
+</div>
+</div>
+<div class="merchant-feat">
+<div class="merchant-feat-icon">&#127970;</div>
+<div>
+<h4>Tanpa Integrasi POS</h4>
+<p>Cukup daftar via WhatsApp. Tidak perlu instalasi software atau perubahan sistem.</p>
+</div>
+</div>
+<div class="merchant-feat">
+<div class="merchant-feat-icon">&#129309;</div>
+<div>
+<h4>41% Upsell Rate</h4>
+<p>Pelanggan Jago Hemat sering kembali dan belanja lebih di kunjungan berikutnya.</p>
+</div>
+</div>
+<div class="merchant-feat">
+<div class="merchant-feat-icon">&#128200;</div>
+<div>
+<h4>ESG Report Otomatis</h4>
+<p>Kg food saved, CO2 prevented — semua tercatat otomatis untuk disclosure keberlanjutan.</p>
+</div>
+</div>
+</div>
+<div class="merchant-trust">
+<span class="badge badge-green">&#128228; 500+ Merchant</span>
+<span class="badge badge-yellow">&#128181; 0 Biaya Awal</span>
+<span class="badge badge-orange">&#128220; ESG Report Included</span>
+</div>
+<div class="merchant-steps">
+<div class="ms"><div class="ms-num">1</div><div><h4>WhatsApp Kami</h4><p>Isi form singkat: nama, alamat, jam operasional</p></div></div>
+<div class="ms"><div class="ms-num">2</div><div><h4>Set Harga & Stok</h4><p>Tentukan harga dan jumlah paket per sesi</p></div></div>
+<div class="ms"><div class="ms-num">3</div><div><h4>Mulai Jual</h4><p>Posting muncul di app. Customers langsung bisa pesan.</p></div></div>
+</div>
+<a href="#" class="btn btn-primary btn-lg">&#128222; Daftar Gratis — 5 Menit Saja</a>
+</div>
+<div class="esg-panel">
+<h3>&#128220; Laporan ESG Otomatis</h3>
+<p class="sub">Setiap bulan: kg food saved, CO2 prevented, meals equivalent. Siap untuk disclosure sustainability.</p>
+<div class="esg-stats">
+<div class="esg-stat"><div class="esg-stat-val">2.4K</div><div class="esg-stat-lbl">kg food saved (avg/merchant/mo)</div></div>
+<div class="esg-stat"><div class="esg-stat-val">3.8K</div><div class="esg-stat-lbl">kg CO2 prevented</div></div>
+<div class="esg-stat"><div class="esg-stat-val">4.7K</div><div class="esg-stat-lbl">meals equivalent</div></div>
+<div class="esg-stat"><div class="esg-stat-val">Rp 1.2J</div><div class="esg-stat-lbl">avg extra revenue/mo</div></div>
+</div>
+<a href="#" class="btn btn-ghost">&#128196; Download Sample Report</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MERCHANT FORM SECTION -->
+<section class="merchant-form-section section-pad" id="merchant-form" style="background:var(--bg-primary);border-top:1px solid var(--border)">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#128181; Daftar Gratis — 5 Menit</span>
+<h2 class="section-title">Bergabung Sebagai Merchant Sekarang</h2>
+<p class="section-sub" style="margin:0 auto">Tidak ada biaya pendaftaran. Tidak ada biaya langganan. Mulai dapat extra revenue hari ini juga.</p>
+</div>
+<div class="merchant-form-grid">
+
+<div>
+<h3 style="font-size:clamp(16px,2vw,20px);font-weight:800;margin-bottom:16px;color:var(--text-primary)">&#128220; Hitung Potensi Keuntungan Anda</h3>
+<div class="biz-form-card">
+<div class="roi-calc" style="margin:0 0 16px">
+<h4>&#128200; Kerugian Limbah Bulanan Anda</h4>
+<div class="calc-row">
+<input type="number" id="wasteKg" placeholder="kg/hari" min="0" style="width:80px">
+<span>&#215; Rp</span>
+<input type="number" id="pricePerKg" placeholder="per kg" min="0" style="width:90px">
+<span>=</span>
+<span class="amount" id="roiResult">Rp 0</span>
+<span style="font-size:12px;color:var(--text-muted)">/bulan hilang</span>
+</div>
+</div>
+<h4 style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:12px">Dengan Jago Hemat:</h4>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">Revenue recovered (80%)</span><span style="font-weight:700;color:#01875f" id="revenueRecovered">Rp 0</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">Kg food saved/mo</span><span style="font-weight:700;color:#01875f" id="foodSaved">0 kg</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">CO2 prevented/mo</span><span style="font-weight:700;color:#01875f" id="co2Prevented">0 kg</span></div>
+</div>
+</div>
+</div>
+
+<div>
+<h3 style="font-size:clamp(16px,2vw,20px);font-weight:800;margin-bottom:16px;color:var(--text-primary)">&#128222; Formulir Pendaftaran</h3>
+<form id="merchantForm" onsubmit="submitMerchantForm(event)" class="biz-form-card" style="margin:0">
+<div class="form-group">
+<label>Nama Toko *</label>
+<input type="text" name="store_name" required placeholder="e.g. Roti Canang Bakery" autocomplete="organization">
+</div>
+<div class="form-group">
+<label>Email *</label>
+<input type="email" name="email" required placeholder="owner@tokomu.com" autocomplete="email">
+</div>
+<div class="form-group">
+<label>Nomor WhatsApp *</label>
+<input type="tel" name="whatsapp" required placeholder="+62 812 xxxx xxxx" autocomplete="tel">
+</div>
+<div class="form-group">
+<label>Jenis Toko</label>
+<select name="store_type">
+<option value="">Pilih jenis...</option>
+<option value="restaurant">Restaurant / Warung</option>
+<option value="bakery">Bakery / Cake Shop</option>
+<option value="grocery">Grocery / Minimarket</option>
+<option value="cafe">Cafe / Coffee Shop</option>
+<option value="hotel">Hotel / Resort</option>
+<option value="other">Lainnya</option>
+</select>
+</div>
+<div class="form-group">
+<label>Kota</label>
+<select name="city">
+<option value="">Pilih kota...</option>
+<option value="jakarta">Jakarta</option>
+<option value="surabaya">Surabaya</option>
+<option value="bandung">Bandung</option>
+<option value="bali">Bali</option>
+<option value="semarang">Semarang</option>
+<option value="medan">Medan</option>
+<option value="yogyakarta">Yogyakarta</option>
+<option value="other">Lainnya</option>
+</select>
+</div>
+<button type="submit" class="biz-submit">&#128222; Daftar Gratis Sekarang — 0 Biaya</button>
+<div class="biz-trust-form">
+<span class="biz-trust-item"><svg viewBox="0 0 24 24" stroke="#01875f" fill="none" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Tidak ada kartu kredit</span>
+<span class="biz-trust-item"><svg viewBox="0 0 24 24" stroke="#01875f" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Garansi 30 hari</span>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-pad" id="testimonials">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#11088; Ulasan Nyata</span>
+<h2 class="section-title">RibuOrang Sudah Hemat</h2>
+<p class="section-sub">Cerita nyata dari pengguna Jago Hemat se-Indonesia.</p>
+</div>
+<div class="testi-grid">
+<div class="testi-card">
+<div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="testi-text">&#34;<strong>Makan siang sehari-hari jadi Rp 15rb aja.</strong> Roti dan kue dari bakery favorit — kualitas sama, harga 70% lebih murah. Gila sih ini app.&#34;</div>
+<div class="testi-author">
+<img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Anisa">
+<div>
+<div class="testi-name">Anisa Rahma</div>
+<div class="testi-meta">Jakarta &bull; 3 bulan pakai</div>
+</div>
+<div class="testi-saving">
+<div class="testi-saving-val">Rp 840K</div>
+<div class="testi-saving-lbl">hemat</div>
+</div>
+</div>
+</div>
+<div class="testi-card">
+<div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="testi-text">&#34;<strong>Sebagai chef, aku apresiasi konsepnya.</strong> Makanan enak yang tidak laku di jam 8 malam — tetap sampai ke yang membutuhkan. ESG report-nya juga membantu bisnis kami.&#34;</div>
+<div class="testi-author">
+<img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Dimas">
+<div>
+<div class="testi-name">Dimas Prasetyo</div>
+<div class="testi-meta">Bandung &bull; Merchant Partner</div>
+</div>
+<div class="testi-saving">
+<div class="testi-saving-val">+Rp 1.8J</div>
+<div class="testi-saving-lbl">extra revenue</div>
+</div>
+</div>
+</div>
+<div class="testi-card">
+<div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="testi-text">&#34;<strong>Dulu makanan sisa langsung dibuang.</strong> Sekarang setiap malam aku rescue 15 paket. Pelanggan senang, planet senang, income naik. Win-win-win.&#34;</div>
+<div class="testi-author">
+<img class="testi-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sari">
+<div>
+<div class="testi-name">Sari Dewi</div>
+<div class="testi-meta">Surabaya &bull; 6 bulan pakai</div>
+</div>
+<div class="testi-saving">
+<div class="testi-saving-val">Rp 1.2JT</div>
+<div class="testi-saving-lbl">hemat</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- FAQ SECTION -->
+<section class="faq-section" id="faq">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#128172; Pertanyaan Umum</span>
+<h2 class="section-title">Ada Pertanyaan?</h2>
+<p class="section-sub" style="margin:0 auto">Jawaban untuk hal yang paling sering ditanyakan.</p>
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item featured">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Apakah makanan tetap aman dimakan?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Sangat aman. Setiap item yang terdaftar di Jago Hemat masih dalam masa konsumsi yang aman — diverifikasi oleh tim kualitas kami. Semua makanan diberi label tanggal kadaluarsa yang jelas. Kami mengikuti peraturan keamanan pangan Indonesia (BPOM) dengan ketat.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Bagaimana cara pengambilan makanan bekerja?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Setelah memesan melalui aplikasi, Anda akan menerima konfirmasi dengan jadwal pengambilan dan alamat toko. Tunjukkan saja konfirmasi di toko dan ambil makanan Anda. Seluruh proses kurang dari 2 menit.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Berapa banyak yang bisa saya hemat per bulan?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Pengguna rata-rata kami hemat Rp 340.000 per bulan. Jika Anda gunakan Jago Hemat secara rutin, tidak mengherankan menghemat Rp 1-2 juta per bulan untuk groceries dan makan — semuanya dengan makanan yang sama berkualitasnya.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Bagaimana jika saya tidak puas?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Kami memiliki garansi kepuasan 30 hari. Jika Anda tidak puas dengan pengalaman Anda, hubungi kami melalui WhatsApp dan kami akan mengembalikan uang penuh — tanpa pertanyaan. Tingkat kepuasan mitra kami di atas 99%.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Bagaimana cara toko bergabung?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Daftarkan toko Anda dalam 5 menit menggunakan formulir di atas. Kami akan memverifikasi bisnis Anda, mengatur listing Anda, dan Anda bisa mulai menjual sisa makanan dalam 48 jam. Tidak ada biaya di muka. Garansi 30 hari.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Apakah Jago Hemat tersedia di kota saya?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Kami saat ini tersedia di Jakarta, Surabaya, Bandung, Bali, dan Semarang. Kami terus memperluas — masukkan kota Anda di aplikasi dan kami akan memberitahu Anda saat kami hadir di daerah Anda.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Apakah ada biaya tersembunyi?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Nol. Jago Hemat sepenuhnya gratis untuk pengguna. Untuk merchant, kami mengenakan komisi kecil hanya pada transaksi yang selesai — tanpa biaya listing, tanpa langganan, tanpa biaya tersembunyi. 30 hari pertama tanpa komisi.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+<span>Apakah ada pengiriman atau hanya pengambilan?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Saat ini Jago Hemat hanya pengambilan di toko. Ini menjaga biaya kami tetap rendah sehingga harga tetap rendah untuk Anda! Kami mungkin menambahkan pengiriman di area tertentu di masa depan.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- REFERRAL -->
+<section class="referral section-pad" id="referral">
+<div class="container referral-inner">
+<div class="referral-eyebrow">&#128081; Referral Program &mdash; Eksklusif</div>
+<h2 class="referral-title">
+Ajak <span class="hl-y">1 teman</span>, dapat<br>
+<span class="hl-y">3 pengiriman gratis!</span>
+</h2>
+<p class="referral-sub">
+Sharing itu caring — dan sekarang juga menguntungkan. Undang teman, mereka dapat welcome bonus, kamu dapat gratis pengiriman. Gampang, nyata, langsung jalan.
+</p>
+<div class="ref-mech">
+<div class="ref-step">
+<div class="ref-step-icon">&#128233;</div>
+<div class="ref-step-val">1</div>
+<div class="ref-step-title">Share Link Referral</div>
+<div class="ref-step-desc">Kirim link ke teman via WhatsApp, Instagram, atau SMS</div>
+</div>
+<div class="ref-step">
+<div class="ref-step-icon">&#128227;</div>
+<div class="ref-step-val">3x</div>
+<div class="ref-step-title">Teman Daftar & Pakai</div>
+<div class="ref-step-desc">Mereka download, daftar, dan gunakan 3 pengiriman pertama</div>
+</div>
+<div class="ref-step">
+<div class="ref-step-icon">&#127873;</div>
+<div class="ref-step-val">GRATIS</div>
+<div class="ref-step-title">Kamu Dapat 3 Pengiriman</div>
+<div class="ref-step-desc">Langsung masuk ke akunmu, tanpa minimum order</div>
+</div>
+</div>
+<div class="ref-progress">
+<div class="ref-prog-info">
+<div class="ref-prog-label">Progress: 1 dari 3 teman (33%)</div>
+<div class="ref-prog-bar"><div class="ref-prog-fill" style="width:33%"></div></div>
+<div class="ref-prog-status">Ajak 2 teman lagi = 6 pengiriman gratis!</div>
+</div>
+<a href="#download" class="btn btn-orange btn-lg">&#128279; Bagikan Link Referral</a>
+</div>
+</div>
+</section>
+
+<!-- APP CTA -->
+<section class="app-cta section-pad" id="download">
+<div class="container">
+<div class="app-cta-inner">
+<span class="section-tag">&#128229; Download Sekarang</span>
+<h2 class="section-title">Mulai Hemat dalam 30 Detik</h2>
+<p class="section-sub" style="margin:0 auto 8px">Free download. Tidak ada biaya tersembunyi. 3 pengiriman gratis pertama menunggumu.</p>
+<div class="cta-urgency">
+<span>&#128293; Tersisa 3 pengiriman gratis untuk kamu hari ini</span>
+</div>
+<div class="store-badges">
+<a href="#" class="store-btn">
+<div class="store-btn-icon">&#63749;</div>
+<div class="store-btn-text"><span>Download on the</span><strong>App Store</strong></div>
+</a>
+<a href="#" class="store-btn">
+<div class="store-btn-icon">&#127934;</div>
+<div class="store-btn-text"><span>Get it on</span><strong>Google Play</strong></div>
+</a>
+</div>
+<div style="margin-top:32px">
+<p style="font-size:14px;color:var(--text-muted);margin-top:16px">&#127760; Tersedia dalam Bahasa Indonesia & English</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img src="assets/logo-real.png" alt="Jago Hemat" onerror="this.style.display="none";this.nextElementSibling.style.display="flex"">
+<span style="display:none;align-items:center;gap:8px">&#129382; Jago Hemat</span>
+</div>
+<p class="footer-tagline">Selamatkan makanan, hemat uang, bantu planet.<br>One bag at a time.</p>
+</div>
+<div class="footer-col">
+<h4>Jago Hemat</h4>
+<ul>
+<li><a href="#how">Cara Kerja</a></li>
+<li><a href="#deals">Promo Hari Ini</a></li>
+<li><a href="#impact">Dampak</a></li>
+<li><a href="#testimonials">Ulasan</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Merchant</h4>
+<ul>
+<li><a href="#merchant">Jadi Mitra</a></li>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">ESG Report</a></li>
+<li><a href="#">FAQ Merchant</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Perusahaan</h4>
+<ul>
+<li><a href="#">Tentang Kami</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Karir</a></li>
+<li><a href="#">Kontak</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Jago Hemat. All rights reserved. &bull; <a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a></p>
+<div class="footer-socials">
+<a href="#" class="footer-social">&#128249;</a>
+<a href="#" class="footer-social">&#128100;</a>
+<a href="#" class="footer-social">&#127759;</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- FLOATING CONTROLS -->
+<div class="floating-controls">
+<button class="icon-btn" id="fcTheme" title="Ganti Tema">&#9790;</button>
+<button class="icon-btn" id="fcLang" title="Bahasa">&#127760;</button>
+<button class="icon-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Ke atas">&#8679;</button>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+(function() {
+  // ===== DEALS DATA =====
+  var deals = [
+    {merchant:"Warunk Upnormal", name:"Paket Snack Mix", orig:"Rp 45.000", price:"Rp 15.000", left:3, img:"https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=75", fill:85, expMin:18},
+    {merchant:"Roti Canai Mantap", name:"Paket Roti + Teh", orig:"Rp 28.000", price:"Rp 9.900", left:5, img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=75", fill:60, expMin:45},
+    {merchant:"Bakmi GM", name:"Paket Nasi + Ayam", orig:"Rp 55.000", price:"Rp 18.000", left:2, img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=75", fill:92, expMin:8},
+    {merchant:"Ceria Bakery", name:"Surprise Pastry Box", orig:"Rp 80.000", price:"Rp 22.000", left:4, img:"https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&q=75", fill:70, expMin:62},
+    {merchant:"Kopi Janji Jiwa", name:"Paket Paket Minum", orig:"Rp 38.000", price:"Rp 12.000", left:6, img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=75", fill:45, expMin:90},
+    {merchant:"Dimsum 99", name:"Paket Mix Dimsum", orig:"Rp 60.000", price:"Rp 20.000", left:1, img:"https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&q=75", fill:96, expMin:5},
+  ];
+
+  function padZero(n) { return n < 10 ? "0"+n : ""+n; }
+  function fmtTime(min) {
+    var h = Math.floor(min/60), m = min % 60;
+    return (h > 0 ? h + "j " : "") + m + "m";
+  }
+
+  var dealsGrid = document.getElementById("dealsGrid");
+  deals.forEach(function(d, i) {
+    var card = document.createElement("div");
+    card.className = "deal-card";
+    card.innerHTML = '<div class="deal-card-img"><img src="'+d.img+'" alt="'+d.name+'"><span class="deal-badge">Tersisa '+d.left+' paket</span><span class="deal-timer" data-exp="'+d.expMin+'">--:--</span></div><div class="deal-body"><div class="deal-merchant">'+d.merchant+'</div><div class="deal-name">'+d.name+'</div><div class="deal-meta"><div class="deal-price"><span class="deal-old">'+d.orig+'</span><span class="deal-new">'+d.price+'</span></div><span class="deal-sold">-'+Math.round(100-((d.left/10)*100))+'%</span></div><div class="deal-bar"><div class="deal-fill" style="width:'+d.fill+'%"></div></div></div>';
+    dealsGrid.appendChild(card);
+  });
+
+  // ===== COUNTDOWN TIMERS =====
+  function startTimers() {
+    var timers = document.querySelectorAll(".deal-timer[data-exp]");
+    var startMs = Date.now();
+    function tick() {
+      var elapsed = Math.floor((Date.now() - startMs) / 1000);
+      timers.forEach(function(t) {
+        var total = parseInt(t.dataset.exp) * 60;
+        var remaining = Math.max(0, total - elapsed);
+        var h = Math.floor(remaining/3600), m = Math.floor((remaining%3600)/60), s = remaining%60;
+        if (h > 0) t.textContent = h+"j "+padZero(m)+"m";
+        else t.textContent = padZero(m)+":"+padZero(s);
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+  startTimers();
+
+  // ===== NAV SCROLL =====
+  var nav = document.getElementById("navbar");
+  window.addEventListener("scroll", function() {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, {passive:true});
+
+  // ===== DRAWER =====
+  function openDrawer() {
+    document.getElementById("drawer").classList.add("active");
+    document.getElementById("drawerOverlay").classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeDrawer() {
+    document.getElementById("drawer").classList.remove("active");
+    document.getElementById("drawerOverlay").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  document.getElementById("navToggleBtn").addEventListener("click", openDrawer);
+  document.getElementById("drawerClose").addEventListener("click", closeDrawer);
+  document.getElementById("drawerOverlay").addEventListener("click", closeDrawer);
+  document.querySelectorAll(".drawer a").forEach(function(a) {
+    a.addEventListener("click", closeDrawer);
+  });
+
+  // ===== THEME TOGGLE =====
+  var html = document.documentElement;
+  var savedTheme = localStorage.getItem("jh-theme") || "dark";
+  html.setAttribute("data-theme", savedTheme);
+
+  function setTheme(t) {
+    html.setAttribute("data-theme", t);
+    localStorage.setItem("jh-theme", t);
+    var icon = t === "dark" ? "&#9790;" : "&#127765;";
+    document.getElementById("themeToggle").innerHTML = icon;
+    var fcTheme = document.getElementById("fcTheme");
+    if (fcTheme) fcTheme.innerHTML = icon;
+  }
+  document.getElementById("themeToggle").addEventListener("click", function() {
+    setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+  var fcTheme = document.getElementById("fcTheme");
+  if (fcTheme) fcTheme.addEventListener("click", function() {
+    setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+  setTheme(savedTheme);
+
+  // ===== LANGUAGE TOGGLE =====
+  var lang = localStorage.getItem("jh-lang") || "id";
+  var langs = {id:"EN", en:"ID"};
+
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem("jh-lang", l);
+    document.getElementById("langToggle").textContent = langs[l];
+    var fcLang = document.getElementById("fcLang");
+    if (fcLang) fcLang.textContent = langs[l];
+  }
+  document.getElementById("langToggle").addEventListener("click", function() {
+    setLang(lang === "id" ? "en" : "id");
+  });
+  var fcLang = document.getElementById("fcLang");
+  if (fcLang) fcLang.addEventListener("click", function() {
+    setLang(lang === "id" ? "en" : "id");
+  });
+  setLang(lang);
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  document.querySelectorAll("a[href^=#]").forEach(function(a) {
+    a.addEventListener("click", function(e) {
+      var target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        var offset = 72;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({top:top, behavior:"smooth"});
+      }
+    });
+  });
+
+  // ===== HERO BADGE ANIMATION =====
+  var badges = ["&#127942; Indonesia #1 Food Waste in ASEAN","&#128293; 500+ paket tersedia hari ini","&#127793; 10JT+ kg terselamatkan","&#128176; Hemat hingga Rp 200rb/bulan"];
+  var badgeEl = document.getElementById("heroBadge");
+  if (badgeEl) {
+    var bi = 0;
+    setInterval(function() {
+      bi = (bi + 1) % badges.length;
+      badgeEl.style.opacity = "0";
+      setTimeout(function() {
+        badgeEl.innerHTML = badges[bi];
+        badgeEl.style.opacity = "1";
+      }, 200);
+    }, 3500);
+    badgeEl.style.transition = "opacity .2s";
+  }
+})();
+
+/* FAQ ACCORDION */
+function toggleFaq(el){const item=el.closest(".faq-item");item.classList.toggle("open")}
+
+/* MERCHANT FORM + ROI CALC */
+document.getElementById("wasteKg")?.addEventListener("input",updateROI);
+document.getElementById("pricePerKg")?.addEventListener("input",updateROI);
+function updateROI(){const kg=parseFloat(document.getElementById("wasteKg")?.value)||0;const price=parseFloat(document.getElementById("pricePerKg")?.value)||0;const monthly=kg*price*30;document.getElementById("roiResult").textContent="Rp "+monthly.toLocaleString("id-ID");document.getElementById("revenueRecovered").textContent="Rp "+Math.round(monthly*0.8).toLocaleString("id-ID");document.getElementById("foodSaved").textContent=(kg*30)+" kg";document.getElementById("co2Prevented").textContent=(kg*30*0.9).toFixed(0)+" kg"}
+function submitMerchantForm(e){e.preventDefault();const form=e.target;const fd=new FormData(form);const name=fd.get("store_name");const whatsapp=fd.get("whatsapp");const msg="Halo Jago Hemat! Saya ingin mendaftarkan toko:\n\nNama: "+name+"\nWhatsApp: "+whatsapp+"\nTipe: "+(fd.get("store_type")||"N/A")+"\nKota: "+(fd.get("city")||"N/A");const waUrl="https://wa.me/6281234567890?text="+encodeURIComponent(msg);window.open(waUrl,"_blank");const btn=form.querySelector(".biz-submit");btn.textContent="✅ Terkirim! Kami akan hubungi Anda soon.";btn.disabled=true;setTimeout((()=>{btn.disabled=false;btn.textContent="Daftar Gratis Sekarang — 0 Biaya"}),5000)}
+
+</script>
+</body>
+</html>
