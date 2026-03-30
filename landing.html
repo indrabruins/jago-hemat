@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jago Hemat - Surplus Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #34d399;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; width: 100%; background: rgba(15,23,42,0.95); backdrop-filter: blur(20px); z-index: 100; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo-icon { width: 36px; height: 36px; background: var(--gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: white; }
+        
+        .hero { padding: 180px 0 100px; text-align: center; position: relative; }
+        .hero::before { content: ''; position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%); }
+        .hero-badge { display: inline-block; background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.3); padding: 8px 16px; border-radius: 100px; font-size: 14px; color: #34d399; margin-bottom: 24px; }
+        .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 72px; font-weight: 700; margin-bottom: 20px; line-height: 1.1; }
+        .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 20px; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; }
+        
+        .btn { padding: 16px 32px; border-radius: 12px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+        .btn-primary { background: var(--gradient); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(16,185,129,0.3); }
+        .btn-secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+        
+        .stats { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; }
+        .stat { text-align: center; }
+        .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #10b981; }
+        .stat-label { color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .features { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 16px; }
+        .section-header p { color: #94a3b8; font-size: 18px; max-width: 500px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .feature-card { background: #1e293b; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-8px); border-color: #10b981; }
+        .feature-icon { width: 48px; height: 48px; background: rgba(16,185,129,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .feature-card p { color: #94a3b8; font-size: 15px; }
+        
+        .how-it-works { padding: 100px 0; background: #1e293b; }
+        .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px; }
+        .step { text-align: center; }
+        .step-num { width: 48px; height: 48px; background: var(--gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 16px; }
+        .step h3 { font-size: 18px; margin-bottom: 8px; }
+        .step p { color: #94a3b8; font-size: 14px; }
+        
+        .cta { padding: 100px 0; text-align: center; }
+        .cta h2 { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 20px; }
+        .cta p { color: #94a3b8; font-size: 18px; margin-bottom: 32px; }
+        
+        footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+        .footer-copy { color: #64748b; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .features-grid, .steps { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="logo"><div class="logo-icon">♻️</div>Jago Hemat</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <a href="#pricing" class="btn btn-primary">Start Selling</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">💰 Turn Surplus Into Revenue</div>
+            <h1>Your Inventory<br><span>Is Money</span></h1>
+            <p>The smart marketplace for businesses to sell surplus, overstock, and unused assets. Connect with buyers instantly. Get paid fast. Zero waste.</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary">List Items Free →</a>
+                <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat"><div class="stat-value">$2B+</div><div class="stat-label">Surplus Traded</div></div>
+                <div class="stat"><div class="stat-value">10K+</div><div class="stat-label">Businesses</div></div>
+                <div class="stat"><div class="stat-value">95%</div><div class="stat-label">Sold in 30 Days</div></div>
+                <div class="stat"><div class="stat-value">0%</div><div class="stat-label">Upfront Fees</div></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Jago Hemat?</h2>
+                <p>The smartest way to liquidate surplus</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><div class="feature-icon">🤖</div><h3>AI Pricing</h3><p>Our AI analyzes market data to suggest optimal prices. Sell fast at the right price.</p></div>
+                <div class="feature-card"><div class="feature-icon">🔍</div><h3>Smart Matching</h3><p>AI connects your items with verified buyers who need exactly what you have.</p></div>
+                <div class="feature-card"><div class="feature-icon">📦</div><h3>End-to-End Logistics</h3><p>We handle fulfillment. Pickup, storage, shipping — we've got it covered.</p></div>
+                <div class="feature-card"><div class="feature-icon">💳</div><h3>Instant Payments</h3><p>Get paid within 48 hours of sale. No waiting for buyer confirmation.</p></div>
+                <div class="feature-card"><div class="feature-icon">📊</div><h3>Market Insights</h3><p>Real-time analytics on what's selling, trending categories, and pricing trends.</p></div>
+                <div class="feature-card"><div class="feature-icon">🌱</div><h3>Sustainability Impact</h3><p>Track your environmental savings. Every sale keeps items out of landfills.</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header"><h2>How It Works</h2><p>Turn surplus to cash in 3 steps</p></div>
+            <div class="steps">
+                <div class="step"><div class="step-num">1</div><h3>List Items</h3><p>Upload photos & details. AI optimizes your listing for maximum visibility.</p></div>
+                <div class="step"><div class="step-num">2</div><h3>AI Matches</h3><p>Our algorithm finds hungry buyers. Get offers within hours.</p></div>
+                <div class="step"><div class="step-num">3</div><h3>Sell & Get Paid</h3><p>Accept offers. We handle logistics. Cash hits your account in 48hrs.</p></div>
+                <div class="step"><div class="step-num">4</div><h3>Track Impact</h3><p>See your revenue, environmental savings, and repeat buyer rates.</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Cash In?</h2>
+            <p>Join 10,000+ businesses turning surplus into revenue</p>
+            <a href="#" class="btn btn-primary">List Items Free →</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-inner">
+            <div class="logo"><div class="logo-icon">♻️</div>Jago Hemat</div>
+            <p class="footer-copy">© 2026 Jago Hemat. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
