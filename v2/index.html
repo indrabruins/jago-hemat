@@ -76,7 +76,7 @@ h1,h2,h3,h4{font-family:var(--font-head)}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 img{max-width:100%;height:auto;display:block}
-.container{max-width:1200px;margin:0 auto;padding:0 60px}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
 @media(max-width:768px){.container{padding:0 24px}}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 [data-lang-id]{display:inline}
@@ -97,7 +97,7 @@ img{max-width:100%;height:auto;display:block}
 ═══════════════════════════════════════════════════════════ */
 .section{padding:var(--section-pad);position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(46,125,50,0.12);border:1px solid rgba(46,125,50,0.25);border-radius:var(--radius-full);padding:6px 16px;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:20px}
-.section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px}
+.section-title{font-size:clamp(24px,4vw,48px);font-weight:800;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px}
 .section-sub{font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:32px}
 .section-header-center{text-align:center;margin-bottom:52px}
 .section-header-center .eyebrow{margin:0 auto 20px}
@@ -112,14 +112,14 @@ img{max-width:100%;height:auto;display:block}
 ═══════════════════════════════════════════════════════════ */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:14px 60px;
+  padding:14px clamp(16px,4vw,60px);
   display:flex;align-items:center;justify-content:space-between;
   transition:background 0.3s,backdrop-filter 0.3s,border-color 0.3s,padding 0.3s;
   border-bottom:1px solid transparent;
 }
-.nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom-color:var(--border);padding:10px 60px}
+.nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom-color:var(--border);padding:10px clamp(16px,4vw,60px)}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo img{max-height:44px;width:auto}
+.nav-logo img{max-height:clamp(28px,5vw,44px);width:auto}
 .nav-logo-text{font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--text)}
 .nav-logo-text .hemat{color:var(--accent)}
 .nav-links{display:flex;align-items:center;gap:28px}
@@ -148,8 +148,8 @@ img{max-width:100%;height:auto;display:block}
 ═══════════════════════════════════════════════════════════ */
 .hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:var(--section-pad);overflow:hidden;background:#FFD740;color:#212121}
 .hero-wave{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:0}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
-.hero-copy{max-width:540px}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center;position:relative;z-index:1}
+.hero-copy{max-width:min(540px,100%)}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,125,50,0.12);border:1px solid rgba(46,125,50,0.25);border-radius:var(--radius-full);padding:7px 16px;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:20px;animation:badgePulse 2.5s ease-in-out infinite}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(46,125,50,0.2)}50%{box-shadow:0 0 0 10px rgba(46,125,50,0)}}
 .live-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite;flex-shrink:0}
@@ -175,9 +175,9 @@ img{max-width:100%;height:auto;display:block}
 .app-btn-text small{font-size:10px;color:var(--text-muted);display:block}
 .app-btn-text span{font-size:13px;font-weight:600}
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
-.hero-img{width:100%;max-width:460px;border-radius:28px;box-shadow:var(--shadow-lg);object-fit:cover;max-height:420px}
-.hero-visual::before{content:'';position:absolute;inset:-30px;background:radial-gradient(ellipse at center,rgba(255,215,64,0.3) 0%,transparent 70%);z-index:-1}
-.float-card{position:absolute;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 17px;box-shadow:var(--shadow-md);animation:floatY 4s ease-in-out infinite;z-index:2;min-width:150px}
+.hero-img{width:100%;max-width:min(460px,45vw);border-radius:28px;box-shadow:var(--shadow-lg);object-fit:cover;max-height:420px}
+.hero-visual::before{content:'';position:absolute;inset:clamp(-20px,-3vw,-30px);background:radial-gradient(ellipse at center,rgba(255,215,64,0.3) 0%,transparent 70%);z-index:-1}
+.float-card{position:absolute;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 17px;box-shadow:var(--shadow-md);animation:floatY 4s ease-in-out infinite;z-index:2;min-width:clamp(130px,15vw,150px)}
 .float-card.c1{top:8%;right:-5px;animation-delay:0s}
 .float-card.c2{bottom:10%;left:-5px;animation-delay:2s}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -356,7 +356,7 @@ img{max-width:100%;height:auto;display:block}
    FOR BUSINESS
 ═══════════════════════════════════════════════════════════ */
 .biz-section{background:var(--card);padding:var(--section-pad);border-top:1px solid var(--border)}
-.biz-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.biz-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
 .biz-copy .eyebrow{margin-bottom:16px}
 .biz-copy .section-title{margin-bottom:16px}
 .biz-copy .section-sub{margin-bottom:28px}
@@ -397,10 +397,10 @@ img{max-width:100%;height:auto;display:block}
 ═══════════════════════════════════════════════════════════ */
 .app-cta-section{position:relative;padding:var(--section-pad);border-top:1px solid var(--border);overflow:hidden}
 .app-cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 60% 50%,rgba(46,125,50,0.08) 0%,transparent 70%);pointer-events:none}
-.app-cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.app-cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center;position:relative;z-index:1}
 .app-phone{position:relative;display:flex;justify-content:center;align-items:center}
 .app-phone::before{content:'';position:absolute;inset:-20px;background:radial-gradient(ellipse at center,rgba(46,125,50,0.15) 0%,transparent 65%);z-index:-1}
-.app-mockup{max-width:300px;border-radius:32px;box-shadow:var(--shadow-lg);animation:phoneFloat 4s ease-in-out infinite;object-fit:cover}
+.app-mockup{width:100%;max-width:min(300px,30vw);border-radius:clamp(20px,3vw,32px);box-shadow:var(--shadow-lg);animation:phoneFloat 4s ease-in-out infinite;object-fit:cover}
 @keyframes phoneFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 .app-glow-ring{position:absolute;width:280px;height:280px;border-radius:50%;border:2px solid rgba(46,125,50,0.15);animation:ringPulse 3s ease-in-out infinite}
 @keyframes ringPulse{0%,100%{transform:scale(1);opacity:0.5}50%{transform:scale(1.1);opacity:0.2}}
@@ -436,10 +436,10 @@ img{max-width:100%;height:auto;display:block}
 footer{background:var(--bg);border-top:1px solid rgba(0,0,0,0.08)}
 [data-theme="dark"] footer{border-top-color:var(--border)}
 [data-theme="dark"] .footer-grid{background:transparent}
-.footer-grid{max-width:1200px;margin:0 auto;padding:60px 60px 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-grid{max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,60px) clamp(20px,5vw,60px) 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px)}
 .footer-brand{}
 .footer-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:20px;margin-bottom:14px}
-.footer-logo img{max-height:32px;width:auto}
+.footer-logo img{max-height:clamp(24px,4vw,32px);width:auto}
 .footer-logo-text{color:var(--text)}
 .footer-logo-text .hemat{color:var(--accent)}
 .footer-brand p{font-size:14px;color:var(--text-muted);line-height:1.7;max-width:280px}
@@ -455,7 +455,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,0.08)}
 .app-badge-lbl{line-height:1.2}
 .app-badge-lbl small{font-size:9px;color:var(--text-muted);display:block}
 .app-badge-lbl span{font-size:13px;font-weight:600}
-.footer-bottom{border-top:1px solid rgba(0,0,0,0.06);margin-top:48px;padding-top:24px;max-width:1200px;margin-left:auto;margin-right:auto;padding-left:60px;padding-right:60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom{border-top:1px solid rgba(0,0,0,0.06);margin-top:48px;padding-top:24px;max-width:1200px;margin-left:auto;margin-right:auto;padding-left:clamp(20px,5vw,60px);padding-right:clamp(20px,5vw,60px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 [data-theme="dark"] .footer-bottom{border-top-color:var(--border)}
 .footer-bottom p{font-size:13px;color:var(--text-muted)}
 .footer-social{display:flex;gap:10px}
@@ -561,7 +561,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,0.08)}
     </div>
 
     <div class="hero-visual">
-      <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800&q=80" alt="Indonesian food" class="hero-img" style="border-radius:24px">
+      <img src="assets/hero-food.png" alt="Jago Hemat app" class="hero-img" style="border-radius:24px">
       <div class="float-card c1">
         <div class="fc-row">
           <div class="fc-icon">🍱</div>
@@ -1091,7 +1091,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,0.08)}
   <div class="app-cta-inner">
     <div class="app-phone reveal">
       <div class="app-glow-ring"></div>
-      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Jago Hemat app" class="app-mockup" style="border-radius:24px">
+      <img src="assets/hero-food.png" alt="Jago Hemat" class="app-mockup" style="border-radius:24px">
     </div>
     <div class="app-copy reveal d1">
       <div class="eyebrow">📲 <span data-lang-id>Unduh Aplikasi</span><span data-lang-en>Get the App</span></div>
