@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadi Partner Jago Hemat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --emerald-50:  #ecfdf5;
+      --emerald-100: #d1fae5;
+      --emerald-200: #a7f3d0;
+      --emerald-300: #6ee7b7;
+      --emerald-400: #34d399;
+      --emerald-500: #10b981;
+      --emerald-600: #059669;
+      --emerald-700: #047857;
+      --emerald-800: #065f46;
+      --emerald-900: #064e3b;
+      --dark:       #0f2e25;
+      --text:       #1a2930;
+      --muted:      #5a7a70;
+      --light-bg:   #f0faf5;
+      --white:      #ffffff;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+
+    /* ── Layout ────────────────────────────────────────────────── */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── Hero ──────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, var(--emerald-800) 0%, var(--dark) 100%);
+      padding: 52px 20px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(16,185,129,0.18);
+      border: 1px solid rgba(52,211,153,0.4);
+      color: var(--emerald-300);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 span {
+      color: var(--emerald-400);
+    }
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      max-width: 380px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--emerald-400);
+      color: var(--dark);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(52,211,153,0.35);
+    }
+    .hero-cta:hover {
+      background: var(--emerald-300);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(52,211,153,0.45);
+    }
+
+    /* ── Stats Bar ──────────────────────────────────────────────── */
+    .stats-bar {
+      background: var(--emerald-800);
+      padding: 28px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 8px;
+    }
+    .stat-item + .stat-item {
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-number {
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 800;
+      color: var(--emerald-300);
+      display: block;
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ── Section ────────────────────────────────────────────────── */
+    section { padding: 44px 20px; }
+    section.alt { background: var(--light-bg); }
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--emerald-600);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(22px, 5.5vw, 30px);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    /* ── Value Props ───────────────────────────────────────────── */
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--emerald-100);
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .value-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(5,150,105,0.1);
+    }
+    .value-icon {
+      width: 44px; height: 44px;
+      background: var(--emerald-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .value-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .value-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── How It Works ───────────────────────────────────────────── */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+      position: relative;
+    }
+    /* connector line for desktop */
+    @media (min-width: 480px) {
+      .steps::before {
+        content: '';
+        position: absolute;
+        top: 32px;
+        left: calc(50% - 8px);
+        right: calc(50% - 8px);
+        height: 2px;
+        background: var(--emerald-200);
+        z-index: 0;
+      }
+    }
+    .step {
+      background: var(--white);
+      border: 1px solid var(--emerald-100);
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--emerald-500);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .step h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .step p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Testimonial ───────────────────────────────────────────── */
+    .testimonial {
+      background: linear-gradient(135deg, var(--emerald-700) 0%, var(--emerald-900) 100%);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 28px 0 0;
+    }
+    .testimonial-quote {
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .testimonial-quote::before { content: '\201C'; }
+    .testimonial-quote::after  { content: '\201D'; }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      background: var(--emerald-400);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--emerald-300);
+    }
+
+    /* ── FAQ ────────────────────────────────────────────────────── */
+    .faq-item {
+      border-bottom: 1px solid var(--emerald-100);
+      padding: 18px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--emerald-100); }
+    .faq-q {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .faq-a {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Bottom CTA ─────────────────────────────────────────────── */
+    .bottom-cta {
+      text-align: center;
+      padding: 52px 20px;
+      background: linear-gradient(180deg, var(--light-bg) 0%, var(--white) 100%);
+    }
+    .bottom-cta h2 {
+      font-size: clamp(22px, 5.5vw, 30px);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .bottom-cta p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+    .btn-wa:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.45);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer a { color: var(--emerald-600); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="hero-badge">🏪 Partner Merchant</div>
+      <h1>Jual Lebih Banyak,<br><span>Rugi Lebih Sedikit</span></h1>
+      <p>Rethink Your Shrink — Ubah stok hampir expire jadi pendapatan tambahan. Tanpa ribet.</p>
+      <a href="https://wa.me/6280000000000?text=Halo%2C%20saya%20tertarik%20menjadi%20partner%20Jago%20Hemat" class="hero-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Mulai Sekarang
+      </a>
+    </div>
+  </div>
+
+  <!-- ── STATS BAR ────────────────────────────────────────────── -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number">Rp 8-15jt</span>
+      <span class="stat-label">Recovery/bulan</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">50-80%</span>
+      <span class="stat-label">Diskon ke Konsumen</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Gratis</span>
+      <span class="stat-label">Tanpa Biaya Daftar</span>
+    </div>
+  </div>
+
+  <!-- ── VALUE PROPS ──────────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <div class="section-label">Kenapa Partner?</div>
+      <div class="section-title">Rethink Your Shrink</div>
+      <p class="section-sub">
+        Setiap tahun, miliaran rupiah makanan terbuang sia-sia hanya karena mendekati tanggal expired.
+        Jago Hemat帮她 mengubah loss leader jadi revenue stream.
+      </p>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-icon">💸</div>
+          <h3>Recover Revenue</h3>
+          <p>Jual kembali stok hampir expired dengan diskon 50-80%, yang seharusnya jadi limbah jadi penghasilan.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🚫</div>
+          <h3>Kurangi Sampah</h3>
+          <p>Bantu lingkungan dengan mengurangi food waste. Konsumen senang, bumi senang.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Tanpa Ribet</h3>
+          <p>Cukup daftar, upload stok, dan kami urus sisanya. Tidak ada sistem tambahan yang perlu diinstal.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📊</div>
+          <h3>Dashboard Real-time</h3>
+          <p>Pantau penjualan, stok, dan earning kamu langsung dari dashboard partner Jago Hemat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ─────────────────────────────────────────── -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-label">Cara Kerjanya</div>
+      <div class="section-title">4 Langkah Mudah</div>
+      <p class="section-sub">Mulai dari nol sampai dapat订单pertama dalam hitungan jam.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>📋 Register</h3>
+          <p>Isi form pendaftaran partner di website kami. Gratis, tanpa biaya tersembunyi.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>📦 List Stok</h3>
+          <p>Upload produk yang hampir expired beserta harga diskon langsung dari dashboard.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>🛒 Konsumen Beli</h3>
+          <p>User Jago Hemat menemukan dan membeli produk kamu dengan harga spesial.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>💰 Get Paid</h3>
+          <p>Transfer mingguan langsung ke rekening kamu. Tanpa penundaan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CASE STUDY ───────────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <div class="section-label">Cerita Partner</div>
+      <div class="section-title">Sukses Bersama Jago Hemat</div>
+
+      <div class="testimonial">
+        <p class="testimonial-quote">
+          Dulu kami membuang 15-20 kg roti setiap minggu. Sejak daftar di Jago Hemat, roti sisa itu laku terjual dan kami recover hampir Rp 3 juta setiap bulan. Proses daftarnya simpel, dan timnya sangat helpful.
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">🍞</div>
+          <div>
+            <div class="testimonial-name">[Nama Partner]</div>
+            <div class="testimonial-role">[Nama Toko / Lokasi] — Partner sejak [Tahun]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────── -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-label">Pertanyaan Umum</div>
+      <div class="section-title">Yang Sering Ditanyakan</div>
+
+      <div class="faq-item">
+        <div class="faq-q">Apakah gratis untuk mendaftar?</div>
+        <div class="faq-a">Ya, 100% gratis. Tidak ada biaya pendaftaran, biaya bulanan, atau biaya tersembunyi lainnya.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Bagaimana sistem pembayarannya?</div>
+        <div class="faq-a">Kami transfer ke rekening partner setiap minggu, berdasarkan penjualan minggu sebelumnya.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Apakah saya perlu menginstal aplikasi baru?</div>
+        <div class="faq-a">Tidak. Dashboard partner kami berbasis web — cukup buka browser dan login.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Produk apa saja yang bisa saya listing?</div>
+        <div class="faq-a">Makanan dan minuman yang mendekati tanggal expired, dari bakery, supermarket, restoran, dan café.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Berapa lama proses verifikasi?</div>
+        <div class="faq-a">Biasanya kurang dari 24 jam. Setelah diverifikasi, produk kamu langsung bisa dilihat oleh user Jago Hemat.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOTTOM CTA ────────────────────────────────────────────── -->
+  <div class="bottom-cta">
+    <div class="container">
+      <h2>Siap Recover Revenue<br>Dari Stok Sisa?</h2>
+      <p>Tim kami siap membantu kamu setup dalam hitungan jam.<br>Gratis konsultasi — tidak ada komitmen.</p>
+      <a href="https://wa.me/6280000000000?text=Halo%2C%20saya%20tertarik%20menjadi%20partner%20Jago%20Hemat.%20Bisa%20dibantu%20cara%20daftarnya%3F" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Hubungi via WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer>
+    <p>
+      <a href="https://jagohemat.com">Jago Hemat</a> &nbsp;·&nbsp;
+      <a href="https://jagohemat.com/merchant">Registrasi Partner</a> &nbsp;·&nbsp;
+      partner@jagohemat.com
+    </p>
+    <p style="margin-top:8px;">© 2026 Jago Hemat. Rethink Your Shrink.</p>
+  </footer>
+
+</body>
+</html>
