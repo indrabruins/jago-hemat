@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jago Hemat — Selamatkan Makanan, Hemat Uang (Light)</title>
+<meta name="description" content="Makanan berkualitas hingga 80% lebih murah. Selamatkan makanan, hemat uang, selamatkan planet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.light.css">
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+<div class="nav-inner">
+<a href="#" class="nav-logo">
+<img src="assets/logo-light.svg" alt="Jago Hemat" style="height:36px;width:auto" onerror="this.style.display="none";this.nextElementSibling.style.display="flex"">
+<span style="display:none;align-items:center;gap:8px;color:var(--text-primary);font-weight:900;font-size:22px">&#129382; Jago Hemat</span>
+</a>
+<div class="nav-links">
+<a href="#how" data-i18n="nav_how">Cara Kerja</a>
+<a href="#deals" data-i18n="nav_deals">Promo Hari Ini</a>
+<a href="#impact" data-i18n="nav_impact">Dampak</a>
+<a href="#merchant" data-i18n="nav_merchant">Mitra</a>
+<a href="#testimonials" data-i18n="nav_testimonials">Ulasan</a>
+</div>
+<div class="nav-right">
+<button class="icon-btn" id="langToggle" title="Ganti Bahasa" aria-label="Ganti Bahasa" aria-pressed="false">&#127760;</button>
+<button class="icon-btn" id="themeToggle" title="Ganti Tema" aria-label="Ganti Tema" aria-pressed="false">&#9790;</button>
+<a href="#download" class="btn btn-primary nav-cta" data-i18n="nav_cta">Download Gratis</a>
+<button class="nav-toggle" id="navToggleBtn" aria-label="Menu">&#9776;</button>
+</div>
+</div>
+</nav>
+
+<!-- DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+<div class="drawer-header">
+<span style="font-weight:900;font-size:18px;color:#fff;display:flex;align-items:center;gap:8px">&#129382; Jago Hemat</span>
+<button class="drawer-close" id="drawerClose">&#10005;</button>
+</div>
+<a href="#how" class="drawer-link">&#128203; <span data-i18n="nav_how">Cara Kerja</span></a>
+<a href="#deals" class="drawer-link">&#128293; <span data-i18n="nav_deals">Promo Hari Ini</span></a>
+<a href="#impact" class="drawer-link">&#127793; <span data-i18n="nav_impact">Dampak Saya</span></a>
+<a href="#merchant" class="drawer-link">&#128722; <span data-i18n="drawer_merchant">Jadi Mitra</span></a>
+<a href="#testimonials" class="drawer-link">&#11088; <span data-i18n="nav_testimonials">Ulasan</span></a>
+<div class="drawer-divider"></div>
+<a href="#download" class="highlight">&#128229; <span data-i18n="drawer_download">Unduh Aplikasi</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-grid-bg"></div>
+<div class="container">
+<div class="hero-inner">
+<div class="hero-content">
+<div class="hero-eyebrow reveal visible">
+<span id="heroBadge" class="badge badge-orange">&#128293; 127+ paket aktif — jakarta hari ini</span>
+</div>
+<h1 class="hero-title reveal reveal-delay-1 visible">
+Rp 10rb Makan Siang?<br>
+<span class="hl-y gradient-text">Paket Makanan 80% Lebih Murah</span><br>
+Yang Bikin Dompet & Planet Senang.
+</h1>
+<p class="hero-sub reveal reveal-delay-2 visible">
+Makanan restoran favorit — nasi kotak, roti, lauk pauk —<br>
+<strong>hasta 80% lebih hemat</strong>. Ambil sebelum jam tutup.<br>
+Masalah makanan Indonesia: solved. Dompet kamu: saved.
+</p>
+<div class="hero-stats reveal reveal-delay-3 visible">
+<div class="hero-stat"><div class="hero-stat-val">14.7 JT</div><div class="hero-stat-lbl">kg makanan terbuang/th</div></div>
+<div class="hero-stat"><div class="hero-stat-val">44%</div><div class="hero-stat-lbl">dari itu, masih layak makan</div></div>
+<div class="hero-stat"><div class="hero-stat-val">80%</div><div class="hero-stat-lbl">hemat per pesanan</div></div>
+</div>
+<div class="hero-trust reveal reveal-delay-4 visible">
+<div class="trust-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 (12K+ rating)</div>
+<div class="trust-item">&#128228; 500K+ Pembeli Aktif</div>
+<div class="trust-item">&#127793; 10JT+ kg diselamatkan komunitas</div>
+</div>
+<div class="hero-actions reveal reveal-delay-5 visible">
+<a href="#download" class="btn btn-orange btn-lg" data-i18n="hero_cta">&#128229; Download Gratis &mdash; 3 Pickup Gratis Menunggu!</a>
+</div>
+</div>
+<div class="hero-visual reveal reveal-delay-2 visible">
+<div class="hero-img-wrap">
+<img class="hero-main-img" src="assets/hero-food-1.png" alt="Jago Hemat — Makanan Enak 80% Lebih Murah" loading="eager" fetchpriority="high">
+<img class="hero-alt-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&q=80" alt="Bakery" style="opacity:0" loading="lazy">
+<div class="hero-img-overlay">
+<span class="hero-live-badge">
+<span class="pulse-dot"></span>
+&#128293; 127 paket aktif di sekitarmu sekarang
+</span>
+</div>
+<div class="hero-dots">
+<span class="hero-dot active" data-slide="0"></span>
+<span class="hero-dot" data-slide="1"></span>
+</div>
+</div>
+<div class="float-card float-card-1">
+<div class="float-card-icon">&#128176;</div>
+<div class="float-card-val">Rp 280Rb</div>
+<div class="float-card-lbl">hemat rata-rata/bulan</div>
+</div>
+<div class="float-card float-card-2">
+<div class="float-card-icon">&#127793;</div>
+<div class="float-card-val">12.4 kg</div>
+<div class="float-card-lbl">makanan diselamatkan</div>
+</div>
+</div>
+</div>
+<div class="scroll-indicator"><div class="scroll-indicator-dot"></div></div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how section-pad" id="how">
+<div class="container proportional">
+<div class="section-header reveal visible">
+<span class="section-tag" data-i18n="how_tag">&#128203; Cuma 3 Langkah</span>
+<h2 class="section-title" data-i18n="how_title">Mulai Hemat dalam 3 Menit</h2>
+<p class="section-sub" data-i18n="how_sub">Buka app → pilih makanan → hemat. Tanpa kartu kredit, tanpa biaya tersembunyi.</p>
+</div>
+<div class="how-steps">
+<div class="how-step reveal-scale reveal-delay-1 visible">
+<div class="how-step-icon"><img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=200&q=80" alt="Pilih makanan" style="width:80px;height:80px;object-fit:cover;border-radius:16px;"></div>
+<div class="how-step-num">1</div>
+<div class="how-step-title" data-i18n="step1_title">Pilih Makanan</div>
+<div class="how-step-desc" data-i18n="step1_desc">Cari makanan berkualitas dari toko & restoran di sekitarmu. Filter berdasarkan lokasi, jenis, dan harga — pickup hari ini.</div>
+</div>
+<div class="how-step reveal-scale reveal-delay-2 visible">
+<div class="how-step-icon"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&q=80" alt="Surprise bag" style="width:80px;height:80px;object-fit:cover;border-radius:16px;"></div>
+<div class="how-step-num">2</div>
+<div class="how-step-title" data-i18n="step2_title">Beli Surprise Bag</div>
+<div class="how-step-desc" data-i18n="step2_desc">Paket makanan premium dengan harga hingga 80% lebih murah. Isinya? Menu restoran di akhir hari — selalu berkualitas, selalu segar. Surprise, tapi kualitasnya pasti.</div>
+</div>
+<div class="how-step reveal-scale reveal-delay-3 visible">
+<div class="how-step-icon"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=80" alt="Ambil makanan" style="width:80px;height:80px;object-fit:cover;border-radius:16px;"></div>
+<div class="how-step-num">3</div>
+<div class="how-step-title" data-i18n="step3_title">Ambil & Hemat</div>
+<div class="how-step-desc" data-i18n="step3_desc">Tunjukkan kode QR di merchant, ambil makananmu, dan nikmati. Gampang — kurang dari 2 menit.</div>
+</div>
+</div>
+<div class="surprise-banner">
+<div class="surprise-icon">&#129327;</div>
+<div>
+<h3 data-i18n="surprise_title">&#128161; Kenapa Bisa Lebih Murah?</h3>
+<p data-i18n="surprise_desc">Toko menjual sisa makanan di luar jam sibuk — sebelum expired dan sebelum terbuang. Kamu dapat makanan berkualitas dengan harga diskon besar. Win-win nyata.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TODAY'S DEALS -->
+<section class="deals section-pad full-bleed" id="deals">
+<div class="container">
+<div class="deals-header">
+<div>
+<span class="section-tag" data-i18n="deals_tag">&#128293; Habis Hari Ini</span>
+<h2 class="section-title" data-i18n="deals_title">Paket Murah — Tersisa Beberapa Saja</h2>
+</div>
+<div class="deals-live">
+<span class="live-dot"></span>
+<span data-i18n="deals_live">Stok real-time &mdash; perbarui otomatis</span>
+</div>
+</div>
+<div class="deals-grid" id="dealsGrid">
+<!-- Deals injected by JS -->
+</div>
+</div>
+</section>
+
+<!-- IMPACT TRACKER -->
+<section class="impact section-pad" id="impact">
+<div class="container proportional-wide">
+<div class="section-header reveal visible">
+<span class="section-tag" data-i18n="impact_tag">&#127793; Dampak Nyata</span>
+<h2 class="section-title" data-i18n="impact_title">Kamu Yang Membuat Perubahan Ini</h2>
+<p class="section-sub" data-i18n="impact_sub">Setiap pickup = makanan terselamatkan, CO₂ dicegah, dompet aman. Semua terukur.</p>
+</div>
+<div class="impact-nums">
+<div class="impact-card-sm reveal reveal-delay-1 visible">
+<div class="impact-val" id="impactFood">10.2 JT</div>
+<div class="impact-lbl">kg makanan diselamatkan</div>
+<div class="impact-sub">di seluruh Indonesia</div>
+</div>
+<div class="impact-card-sm reveal reveal-delay-2 visible">
+<div class="impact-val">21.5K</div>
+<div class="impact-lbl">ton CO2 dicegah</div>
+<div class="impact-sub">= 9.6 juta pohon tumbuh 1 tahun</div>
+</div>
+<div class="impact-card-sm reveal reveal-delay-3 visible">
+<div class="impact-val">Rp 4.2 M</div>
+<div class="impact-lbl">hemat dikembalikan ke pengguna</div>
+<div class="impact-sub">sejak launch</div>
+</div>
+<div class="impact-card-sm reveal reveal-delay-4 visible">
+<div class="impact-val">500+</div>
+<div class="impact-lbl">merchant aktif</div>
+<div class="impact-sub">di 12 kota</div>
+</div>
+</div>
+<div class="impact-bottom">
+<div class="impact-big">
+<h3 data-i18n="impact_personal_title">&#127793; Ini Kontribusimu — Dampak Personal</h3>
+<div class="impact-big-stats">
+<div>
+<div class="ibs-val" id="personalFood">12.4 kg</div>
+<div class="ibs-lbl">makanan yang kamu selamatkan</div>
+</div>
+<div>
+<div class="ibs-val">25.8 kg</div>
+<div class="ibs-lbl">CO2 yang kamu cegah</div>
+</div>
+<div>
+<div class="ibs-val">8 pohon</div>
+<div class="ibs-lbl">setara penanaman</div>
+</div>
+<div>
+<div class="ibs-val">Rp 840K</div>
+<div class="ibs-lbl">total hematmu</div>
+</div>
+</div>
+<a href="#" class="btn btn-ghost" onclick="shareImpactCard();return false">&#128247; Download Impact Card — Siap Share ke WhatsApp</a>
+</div>
+<div class="leaderboard">
+<h4>&#127941; Ranking Hemat Teratas Bulan Ini</h4>
+<div class="lb-item"><div class="lb-rank gold">1</div><div class="lb-name">Jakarta Selatan</div><div class="lb-score">847 kg</div></div>
+<div class="lb-item"><div class="lb-rank silver">2</div><div class="lb-name">Bandung</div><div class="lb-score">634 kg</div></div>
+<div class="lb-item"><div class="lb-rank bronze">3</div><div class="lb-name">Surabaya</div><div class="lb-score">521 kg</div></div>
+<div class="lb-item"><div class="lb-rank def">4</div><div class="lb-name">Tangerang</div><div class="lb-score">398 kg</div></div>
+<div class="lb-item"><div class="lb-rank def">5</div><div class="lb-name">Bekasi</div><div class="lb-score">312 kg</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MERCHANT -->
+<section class="merchant section-pad" id="merchant">
+<div class="container proportional-merchant">
+<div class="section-header reveal visible">
+<span class="section-tag">&#128722; Untuk Merchant</span>
+<h2 class="section-title">Ubah Sisa Makanan Jadi Penghasilan</h2>
+<p class="section-sub">Daftar gratis. Tanpa biaya awal. Dapat income extra dari makanan sisa — tanpa ribet.</p>
+</div>
+<div class="merchant-grid">
+<div>
+<div class="merchant-features">
+<div class="merchant-feat reveal reveal-delay-1 visible">
+<div class="merchant-feat-icon"><img src="assets/icon-savings.svg" alt="Revenue" style="width:36px;height:36px"></div>
+<div>
+<h4>Extra Revenue, Zero Investment</h4>
+<p>Jual sisa makanan di luar jam sibuk — yang memang tidak akan laku sendiri. Dapat income tambahan tanpa ngurangin stok normal.</p>
+</div>
+</div>
+<div class="merchant-feat reveal reveal-delay-2 visible">
+<div class="merchant-feat-icon"><img src="assets/icon-whatsapp.svg" alt="WhatsApp" style="width:36px;height:36px"></div>
+<div>
+<h4>Tanpa Integrasi POS — Daftar via WhatsApp</h4>
+<p>Tidak perlu software, tidak perlu perubahan sistem. Daftar, listing muncul — selesai. Semuanya dari HP kamu.</p>
+</div>
+</div>
+<div class="merchant-feat reveal reveal-delay-3 visible">
+<div class="merchant-feat-icon"><img src="assets/icon-merchant.svg" alt="Customer" style="width:36px;height:36px"></div>
+<div>
+<h4>67% Pembeli Kembali untuk Belanja Penuh</h4>
+<p>Pelanggan yang coba via Jago Hemat — 67% kembali untuk pembelian normal. Ini customer acquisition, bukan diskon.</p>
+</div>
+</div>
+<div class="merchant-feat reveal reveal-delay-4 visible">
+<div class="merchant-feat-icon"><img src="assets/icon-price.svg" alt="Report" style="width:36px;height:36px"></div>
+<div>
+<h4>Laporan Dampak Otomatis — Kg Makanan Diselamatkan</h4>
+<p>Setiap bulan: kg food saved, CO₂ dicegah, setara meals. Untuk disclosure sustainability dan branding hijau bisnis kamu.</p>
+</div>
+</div>
+</div>
+<div class="merchant-trust">
+<span class="badge badge-green">&#128228; 500+ Merchant</span>
+<span class="badge badge-yellow">&#128181; 0 Biaya Awal</span>
+<span class="badge badge-orange">&#128220; ESG Report Included</span>
+</div>
+<div class="merchant-steps">
+<div class="ms reveal reveal-delay-1 visible"><div class="ms-num" style="display:flex;align-items:center;gap:0"><img src="assets/icon-whatsapp.svg" alt="Step 1" style="width:22px;height:22px"></div><div><h4>WhatsApp Kami</h4><p>Isi form singkat: nama, alamat, jam operasional</p></div></div>
+<div class="ms reveal reveal-delay-2 visible"><div class="ms-num" style="display:flex;align-items:center;gap:0"><img src="assets/icon-price.svg" alt="Step 2" style="width:22px;height:22px"></div><div><h4>Set Harga & Stok</h4><p>Tentukan harga dan jumlah paket per sesi</p></div></div>
+<div class="ms reveal reveal-delay-3 visible"><div class="ms-num" style="display:flex;align-items:center;gap:0"><img src="assets/icon-start.svg" alt="Step 3" style="width:22px;height:22px"></div><div><h4>Mulai Jual</h4><p>Posting muncul di app. Customers langsung bisa pesan.</p></div></div>
+</div>
+<a href="#merchant-form" class="btn btn-primary btn-lg">&#128222; Daftar Gratis — 5 Menit, 0 Biaya</a>
+</div>
+<div class="esg-panel">
+<h3>&#128220; Laporan Dampak yang Merchant Kami Suka</h3>
+<p class="sub">Setiap bulan: kg makanan diselamatkan, CO₂ dicegah, setara meals. Berguna untuk disclosure sustainability — dan untuk posting Instagram bisnis kamu.</p>
+<div class="esg-stats">
+<div class="esg-stat reveal reveal-delay-1 visible"><img src="assets/icon-food.svg" alt="Food saved" style="width:28px;height:28px;margin-bottom:8px"><div class="esg-stat-val">2.4K</div><div class="esg-stat-lbl">kg food saved (avg/merchant/mo)</div></div>
+<div class="esg-stat reveal reveal-delay-2 visible"><img src="assets/icon-co2.svg" alt="CO2 prevented" style="width:28px;height:28px;margin-bottom:8px"><div class="esg-stat-val">3.8K</div><div class="esg-stat-lbl">kg CO2 prevented</div></div>
+<div class="esg-stat reveal reveal-delay-3 visible"><img src="assets/icon-food.svg" alt="Meals" style="width:28px;height:28px;margin-bottom:8px"><div class="esg-stat-val">4.7K</div><div class="esg-stat-lbl">meals equivalent</div></div>
+<div class="esg-stat reveal reveal-delay-4 visible"><img src="assets/icon-savings.svg" alt="Revenue" style="width:28px;height:28px;margin-bottom:8px"><div class="esg-stat-val">Rp 1.2J</div><div class="esg-stat-lbl">extra revenue rata-rata/mo</div></div>
+</div>
+<a href="#" class="btn btn-ghost" onclick="requestESGReport();return false">&#128196; Lihat Contoh Laporan — Download PDF</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MERCHANT FORM SECTION -->
+<section class="merchant-form-section section-pad" id="merchant-form" style="background:var(--bg-primary);border-top:1px solid var(--border)">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">&#128181; Daftar Gratis — 5 Menit</span>
+<h2 class="section-title">Bergabung Sebagai Merchant Sekarang</h2>
+<p class="section-sub" style="margin:0 auto">Tidak ada biaya pendaftaran. Tidak ada biaya langganan. Mulai dapat extra revenue hari ini juga.</p>
+</div>
+<div class="merchant-form-grid">
+
+<div>
+<h3 style="font-size:clamp(16px,2vw,20px);font-weight:800;margin-bottom:16px;color:var(--text-primary)">&#128220; Hitung Potensi Keuntungan Anda</h3>
+<div class="biz-form-card">
+<div class="roi-calc" style="margin:0 0 16px">
+<h4>&#128200; Kerugian Limbah Bulanan Anda</h4>
+<div class="calc-row">
+<input type="number" id="wasteKg" placeholder="kg/hari" min="0" style="width:80px">
+<span>&#215; Rp</span>
+<input type="number" id="pricePerKg" placeholder="per kg" min="0" style="width:90px">
+<span>=</span>
+<span class="amount" id="roiResult">Rp 0</span>
+<span style="font-size:12px;color:var(--text-muted)">/bulan hilang</span>
+</div>
+</div>
+<h4 style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:12px">Dengan Jago Hemat:</h4>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">Revenue recovered (80%)</span><span style="font-weight:700;color:#01875f" id="revenueRecovered">Rp 0</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">Kg food saved/mo</span><span style="font-weight:700;color:#01875f" id="foodSaved">0 kg</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">CO2 prevented/mo</span><span style="font-weight:700;color:#01875f" id="co2Prevented">0 kg</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--text-secondary)">Meals equivalent/mo</span><span style="font-weight:700;color:#01875f" id="mealsEquivalent">0 meals</span></div>
+</div>
+</div>
+<div style="text-align:center;margin-top:16px"><button type="button" class="btn btn-primary" onclick="document.getElementById('merchant-form').scrollIntoView({behavior:'smooth'});document.getElementById('merchantForm').querySelector('[name=store_name]').focus()">&#128200; Calculate My Impact</button></div>
+</div>
+</div>
+
+<div>
+<div style="text-align:center;margin-bottom:24px">
+<a href="https://wa.me/6281234567890?text=Halo%20Jago%20Hemat!%20Saya%20ingin%20mendaftar%20sebagai%20merchant." target="_blank" rel="noopener" class="btn btn-orange btn-lg" style="display:inline-flex;gap:10px">
+<img src="assets/icon-whatsapp.svg" alt="WhatsApp" style="width:24px;height:24px">
+Chat WhatsApp Kami Sekarang
+</a>
+<p style="font-size:13px;color:var(--text-muted);margin-top:10px">Respon cepat — biasanya dalam 30 menit</p>
+</div>
+<h3 style="font-size:clamp(16px,2vw,20px);font-weight:800;margin-bottom:16px;color:var(--text-primary)">&#128222; Formulir Pendaftaran</h3>
+<form id="merchantForm" onsubmit="submitMerchantForm(event)" class="biz-form-card" style="margin:0">
+<div class="form-group">
+<label>Nama Toko *</label>
+<input type="text" name="store_name" required placeholder="e.g. Roti Canang Bakery" autocomplete="organization">
+</div>
+<div class="form-group">
+<label>Email *</label>
+<input type="email" name="email" required placeholder="owner@tokomu.com" autocomplete="email">
+</div>
+<div class="form-group">
+<label>Nomor WhatsApp *</label>
+<input type="tel" name="whatsapp" required placeholder="+62 812 xxxx xxxx" autocomplete="tel">
+</div>
+<div class="form-hint" style="font-size:12px;color:var(--text-muted);margin-top:-12px;margin-bottom:16px">Format: 08xx xxx xxxx atau +62 8xx xxx xxxx</div>
+<div class="form-group">
+<label>Jenis Toko</label>
+<select name="store_type">
+<option value="">Pilih jenis...</option>
+<option value="restaurant">Restaurant / Warung</option>
+<option value="bakery">Bakery / Cake Shop</option>
+<option value="grocery">Grocery / Minimarket</option>
+<option value="cafe">Cafe / Coffee Shop</option>
+<option value="hotel">Hotel / Resort</option>
+<option value="other">Lainnya</option>
+</select>
+</div>
+<div class="form-group">
+<label>Kota</label>
+<select name="city">
+<option value="">Pilih kota...</option>
+<option value="jakarta">Jakarta</option>
+<option value="surabaya">Surabaya</option>
+<option value="bandung">Bandung</option>
+<option value="bali">Bali</option>
+<option value="semarang">Semarang</option>
+<option value="medan">Medan</option>
+<option value="yogyakarta">Yogyakarta</option>
+<option value="other">Lainnya</option>
+</select>
+</div>
+<button type="submit" class="biz-submit">&#128222; Daftar Gratis Sekarang — 0 Biaya</button>
+<div class="biz-trust-form">
+<span class="biz-trust-item"><svg viewBox="0 0 24 24" stroke="#01875f" fill="none" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Tidak ada kartu kredit</span>
+<span class="biz-trust-item"><svg viewBox="0 0 24 24" stroke="#01875f" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Garansi 30 hari</span>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-pad" id="testimonials">
+<div class="container proportional-wide">
+<div class="section-header reveal visible">
+<span class="section-tag">&#11088; Ulasan Nyata</span>
+<h2 class="section-title">Ribu Orang Sudah Hemat</h2>
+<p class="section-sub">Cerita nyata dari pengguna Jago Hemat se-Indonesia.</p>
+</div>
+<div class="testi-wrap">
+<div class="testi-grid">
+<div class="testi-card reveal reveal-delay-1 visible">
+<div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="testi-text">&#34;<strong>Makan siang Rp 15rb aja.</strong> Roti dan kue dari bakery favorit — kualitas sama, harga 70% lebih murah. Ini app yang bikin bingung kenapa baru coba sekarang.&#34;</div>
+<div class="testi-author">
+<img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Anisa">
+<div>
+<div class="testi-name">Anisa Rahma</div>
+<div class="testi-meta">Jakarta &bull; 3 bulan pakai</div>
+</div>
+<div class="testi-saving">
+<div class="testi-saving-val">Rp 840K</div>
+<div class="testi-saving-lbl">hemat</div>
+</div>
+</div>
+</div>
+</div>
+<div class="testi-card reveal reveal-delay-2 visible">
+<div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="testi-text">&#34;<strong>Dari perspektif bisnis: game changer.</strong> Makanan yang tidak laku di jam 8 malam — sampai ke yang membutuhkan. ESG report-nya juga membantu saat disclosure sustainability. 10/10.&#34;</div>
+<div class="testi-author">
+<img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Dimas">
+<div>
+<div class="testi-name">Dimas Prasetyo</div>
+<div class="testi-meta">Bandung &bull; Merchant Partner</div>
+</div>
+<div class="testi-saving">
+<div class="testi-saving-val">+Rp 1.8J</div>
+<div class="testi-saving-lbl">extra revenue</div>
+</div>
+</div>
+</div>
+</div>
+<div class="testi-card reveal reveal-delay-3 visible">
+<div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="testi-text">&#34;<strong>Dulu makanan sisa langsung dibuang.</strong> Sekarang setiap malam aku rescue 15 paket. Pelanggan senang, planet senang, income naik. Win-win-win.&#34;</div>
+<div class="testi-author">
+<img class="testi-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sari">
+<div>
+<div class="testi-name">Sari Dewi</div>
+<div class="testi-meta">Surabaya &bull; 6 bulan pakai</div>
+</div>
+<div class="testi-saving">
+<div class="testi-saving-val">Rp 1.2JT</div>
+<div class="testi-saving-lbl">hemat</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TESTIMONIALS MARQUEE -->
+<div class="testi-marquee" aria-hidden="true">
+  <div class="testi-track">
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Hemat 70% di bakery favorit — makan siang Rp 15rb!" — Anisa, Jakarta</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Extra Rp 1.8J/bulan dari makanan yang biasanya dibuang" — Dimas, Merchant Bandung</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Rescue 15 paket tiap malam — pelanggan senang, planet senang" — Sari, Surabaya</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Hemat Rp 840K dalam 3 bulan — satu bakery di belakang kantor" — Rina, Jakarta</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Extra revenue Rp 1.8J/mo — ROI-nya lebih dari 10x" — Dimas, Merchant</div>
+    <!-- duplicate for seamless loop -->
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Hemat 70% di bakery favorit — makan siang Rp 15rb!" — Anisa, Jakarta</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Extra Rp 1.8J/bulan dari makanan yang biasanya dibuang" — Dimas, Merchant Bandung</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Rescue 15 paket tiap malam — pelanggan senang, planet senang" — Sari, Surabaya</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Hemat Rp 840K dalam 3 bulan — satu bakery di belakang kantor" — Rina, Jakarta</div>
+    <div class="testi-chip">&#9733;&#9733;&#9733;&#9733;&#9733; "Extra revenue Rp 1.8J/mo — ROI-nya lebih dari 10x" — Dimas, Merchant</div>
+  </div>
+</div>
+
+</section>
+
+
+<!-- FAQ SECTION -->
+<section class="faq-section" id="faq">
+<div class="container faq-proportional">
+<div class="section-header reveal visible">
+<span class="section-tag">&#128172; Pertanyaan Umum</span>
+<h2 class="section-title">Ada Pertanyaan?</h2>
+<p class="section-sub" style="margin:0 auto">Jawaban untuk hal yang paling sering ditanyakan.</p>
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item featured reveal reveal-delay-1 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Apakah makanan tetap aman dimakan?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Sangat aman — dan bisa kamu verifikasi sendiri. Semua makanan yang dijual di Jago Hemat: (1) masih dalam masa konsumsi yang aman berdasarkan label BPOM, (2) disimpan sesuai standar hygiene toko, (3) harus diambil di hari yang sama sebelum jam tutup. Tidak ada kompromi soal keamanan pangan.</p>
+</div>
+</div>
+
+<div class="faq-item reveal reveal-delay-2 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Bagaimana cara pengambilan makanan bekerja?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Setelah memesan melalui aplikasi, Anda akan menerima konfirmasi dengan jadwal pengambilan dan alamat toko. Tunjukkan saja konfirmasi di toko dan ambil makanan Anda. Seluruh proses kurang dari 2 menit.</p>
+</div>
+</div>
+
+<div class="faq-item reveal reveal-delay-3 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Berapa banyak yang bisa saya hemat per bulan?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Rata-rata pengguna aktif kami hemat Rp 280-400rb per bulan. Kalau kamu gunakan setiap hari untuk makan siang dari bakery dan restoran favorit — tidak sulit hemat Rp 1-2 juta/bulan untuk makanan yang sama kualitasnya. Mulai dari Rp 10rb per pickup.</p>
+</div>
+</div>
+
+<div class="faq-item reveal reveal-delay-4 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Bagaimana jika saya tidak puas?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Garansi kepuasan 30 hari — uang kembali penuh, tanpa pertanyaan. Cukup chat WhatsApp kami, dan refund diproses dalam 24 jam. Tingkat kepuasan pengguna kami: 4.8/5 dari 12.000+ review.</p>
+</div>
+</div>
+
+<div class="faq-item reveal reveal-delay-5 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Bagaimana cara toko bergabung?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Daftarkan toko Anda dalam 5 menit menggunakan formulir di atas. Kami akan memverifikasi bisnis Anda, mengatur listing Anda, dan Anda bisa mulai menjual sisa makanan dalam 48 jam. Tidak ada biaya di muka. Garansi 30 hari.</p>
+</div>
+</div>
+
+<div class="faq-item reveal reveal-delay-6 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Apakah Jago Hemat tersedia di kota saya?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Saat ini tersedia di Jakarta, Surabaya, Bandung, Bali, dan Semarang. Kota kamu belum tercakup? Masukkan nomor WhatsApp — kami notify kamu personally begitu Jago Hemat hadir di kotamu.</p>
+</div>
+</div>
+
+<div class="faq-item reveal reveal-delay-7 visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Apakah ada biaya tersembunyi?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Nol. Jago Hemat 100% gratis untuk pengguna. Tidak ada biaya registrasi, tidak ada biaya langganan, tidak ada biaya tersembunyi. Kamu hanya bayar harga paket yang kamu beli — itu saja.</p>
+</div>
+</div>
+
+<div class="faq-item reveal visible">
+<div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){toggleFaq(this);event.preventDefault()}">
+<span>Apakah ada pengiriman atau hanya pengambilan?</span>
+<div class="faq-icon"></div>
+</div>
+<div class="faq-a">
+<p>Saat ini Jago Hemat hanya pengambilan di toko. Ini menjaga biaya kami tetap rendah sehingga harga tetap rendah untuk Anda! Kami mungkin menambahkan pengiriman di area tertentu di masa depan.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- REFERRAL -->
+<section class="referral section-pad full-bleed" id="referral">
+<div class="container referral-inner">
+<div class="referral-eyebrow reveal visible" data-i18n="ref_eyebrow">&#128081; Teman Kamu Sudah Hemat — Sekarang Giliranmu</div>
+<h2 class="referral-title reveal reveal-delay-1 visible">
+Ajak <span class="hl-y">1 teman</span>, dapat<br>
+<span class="hl-y">3 pickup gratis!</span>
+</h2>
+<p class="referral-sub reveal reveal-delay-2 visible">
+Undang teman via WhatsApp. Mereka dapat 3 pickup gratis. Kamu juga dapat 3 pickup gratis begitu mereka gunakan. Gampang, langsung dapat, tanpa minimum order.
+</p>
+<div class="ref-mech">
+<div class="ref-step reveal reveal-delay-1 visible">
+<div class="ref-step-icon">&#128233;</div>
+<div class="ref-step-val">1</div>
+<div class="ref-step-title" data-i18n="ref_step1_title">Share Link Referral</div>
+<div class="ref-step-desc" data-i18n="ref_step1_desc">Kirim link ke teman via WhatsApp, Instagram, atau SMS</div>
+</div>
+<div class="ref-step reveal reveal-delay-2 visible">
+<div class="ref-step-icon">&#128227;</div>
+<div class="ref-step-val">3x</div>
+<div class="ref-step-title" data-i18n="ref_step2_title">Teman Download & Pakai Kode</div>
+<div class="ref-step-desc" data-i18n="ref_step2_desc">Mereka download app, daftar, dan gunakan 3 pickup gratis dari akun mereka</div>
+</div>
+<div class="ref-step reveal reveal-delay-3 visible">
+<div class="ref-step-icon">&#127873;</div>
+<div class="ref-step-val">GRATIS</div>
+<div class="ref-step-title" data-i18n="ref_step3_title">Kamu Dapat 3 Pickup</div>
+<div class="ref-step-desc" data-i18n="ref_step3_desc">Langsung masuk ke akunmu — tanpa minimum order, tanpa batas waktu</div>
+</div>
+</div>
+<div class="ref-progress">
+<div class="ref-prog-info">
+<div class="ref-prog-label" data-i18n="ref_progress_label">Progress: 1 dari 3 teman (33%)</div>
+<div class="ref-prog-bar"><div class="ref-prog-fill" style="width:33%"></div></div>
+<div class="ref-prog-status" data-i18n="ref_progress_status">Ajak 2 teman lagi = 6 pickup gratis!</div>
+</div>
+<a href="#download" class="btn btn-orange btn-lg">&#128279; Bagikan Link Referral</a>
+</div>
+</div>
+</section>
+
+<!-- APP CTA -->
+<section class="app-cta section-pad full-bleed" id="download">
+<div class="container">
+<div class="app-cta-inner">
+<span class="section-tag" data-i18n="cta_tag">&#128229; Download Sekarang</span>
+<h2 class="section-title" data-i18n="cta_title">Mulai Hemat dalam 3 Menit</h2>
+<p class="section-sub" style="margin:0 auto 8px" data-i18n="cta_sub">Free download. Tidak ada biaya tersembunyi. 3 pickup gratis pertama menunggumu.</p>
+<div class="cta-urgency">
+<span data-i18n="cta_urgency">&#128293; Offer baru: 3 pickup gratis untuk pengguna baru hari ini — aktifkan sekarang</span>
+</div>
+<div class="store-badges">
+<a href="https://apps.apple.com/app/jago-hemat" class="store-btn store-badge-animate" target="_blank" rel="noopener">
+<div class="store-btn-icon">&#63749;</div>
+<div class="store-btn-text"><span>Download on the</span><strong>App Store</strong></div>
+</a>
+<a href="https://play.google.com/store/apps/details?id=com.jagohemat.app" class="store-btn store-badge-animate" target="_blank" rel="noopener">
+<div class="store-btn-icon">&#127934;</div>
+<div class="store-btn-text"><span>Get it on</span><strong>Google Play</strong></div>
+</a>
+</div>
+<div style="margin-top:32px">
+<p style="font-size:14px;color:var(--text-muted);margin-top:16px">&#127760; Tersedia dalam Bahasa Indonesia &amp; English</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img src="assets/logo-real.png" alt="Jago Hemat" onerror="this.style.display="none";this.nextElementSibling.style.display="flex"">
+<span style="display:none;align-items:center;gap:8px">&#129382; Jago Hemat</span>
+</div>
+<p class="footer-tagline" data-i18n="footer_tagline">Selamatkan makanan, hemat uang, bantu planet.<br>One bag at a time.</p>
+</div>
+<div class="footer-col">
+<h4 data-i18n="footer_col1_title">Jago Hemat</h4>
+<ul>
+<li><a href="#how">Cara Kerja</a></li>
+<li><a href="#deals">Promo Hari Ini</a></li>
+<li><a href="#impact">Dampak</a></li>
+<li><a href="#testimonials">Ulasan</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-i18n="footer_col2_title">Merchant</h4>
+<ul>
+<li><a href="#merchant">Jadi Mitra</a></li>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#merchant-form">ESG Report</a></li>
+<li><a href="#faq">FAQ Merchant</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-i18n="footer_col3_title">Perusahaan</h4>
+<ul>
+<li><a href="#">Tentang Kami</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Karir</a></li>
+<li><a href="https://wa.me/6281234567890?text=Halo%20Jago%20Hemat!" target="_blank" rel="noopener">📱 WhatsApp</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Jago Hemat. All rights reserved. &bull; <a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a></p>
+<div class="footer-socials">
+<a href="https://www.instagram.com/jagohemat.id" target="_blank" rel="noopener" class="footer-social">&#128100;</a>
+<a href="https://www.tiktok.com/@jagohemat.id" target="_blank" rel="noopener" class="footer-social">&#128249;</a>
+<a href="https://jagohemat.com" target="_blank" rel="noopener" class="footer-social">&#127759;</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta" id="stickyCta">
+  <span style="color:rgba(255,255,255,.7);font-size:15px;font-weight:600" data-i18n="sticky_text">Mulai hemat dalam 3 menit &mdash;</span>
+  <a href="#download" class="btn btn-orange btn-sm" data-i18n="sticky_cta">&#128229; Download Gratis</a>
+</div>
+
+<!-- FLOATING CONTROLS -->
+<div class="floating-controls">
+<button class="icon-btn" id="fcTheme" title="Ganti Tema" aria-label="Ganti Tema">&#9790;</button>
+<button class="icon-btn" id="fcLang" title="Bahasa" aria-label="Ganti Bahasa">&#127760;</button>
+<button class="icon-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Ke atas" aria-label="Scroll ke atas">&#8679;</button>
+</div>
+
+<!-- SOCIAL PROOF TOAST -->
+<div id="socialProofToast">&#128293; +47 orang mengundi makanan dalam 1 jam terakhir</div>
+
+<!-- JAVASCRIPT -->
+<script>
+(function() {
+  // ===== DEALS DATA =====
+  var deals = [
+    {merchant:"Martabak Orins Bandung", name:"Paket Martabak + Teh", orig:"Rp 55.000", price:"Rp 15.000", left:3, img:"https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&q=75", fill:85, expMin:18},
+    {merchant:"Roti Canai Mantap", name:"Paket Roti + Teh Anget", orig:"Rp 28.000", price:"Rp 9.900", left:5, img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=75", fill:60, expMin:45},
+    {merchant:"Bakmi GM", name:"Paket Nasi + Ayam Geprek", orig:"Rp 55.000", price:"Rp 18.000", left:2, img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=75", fill:92, expMin:8},
+    {merchant:"Ceria Bakery", name:"Surprise Pastry Box", orig:"Rp 80.000", price:"Rp 22.000", left:4, img:"https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&q=75", fill:70, expMin:62},
+    {merchant:"Nasi Kotak Bu Asih", name:"Paket Nasi Kotak", orig:"Rp 45.000", price:"Rp 12.000", left:6, img:"https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=75", fill:45, expMin:90},
+    {merchant:"Dimsum 99", name:"Paket Mix Dimsum", orig:"Rp 60.000", price:"Rp 20.000", left:1, img:"https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&q=75", fill:96, expMin:5},
+  ];
+
+  function padZero(n) { return n < 10 ? "0"+n : ""+n; }
+  function fmtTime(min) {
+    var h = Math.floor(min/60), m = min % 60;
+    return (h > 0 ? h + "j " : "") + m + "m";
+  }
+
+  var dealsGrid = document.getElementById("dealsGrid");
+  deals.forEach(function(d, i) {
+    var card = document.createElement("div");
+    card.className = "deal-card";
+    // Correct discount % from price math, not stock count
+    var origNum = parseInt(d.orig.replace(/[^0-9]/g, ''));
+    var priceNum = parseInt(d.price.replace(/[^0-9]/g, ''));
+    var discountPct = Math.round((1 - priceNum / origNum) * 100);
+    var urgentOverlay = d.expMin < 15 ? '<div class="deal-urgent-overlay">&#128293; HABIS SEGERA — '+fmtTime(d.expMin)+'</div>' : '';
+    var newBadge = d.expMin > 60 ? '<span class="deal-new-badge">BARU!</span>' : '';
+    card.innerHTML = '<div class="deal-card-img"><img src="'+d.img+'" alt="'+d.name+'" loading="lazy">'+urgentOverlay+newBadge+'<span class="deal-badge">&#9888; Cuma '+d.left+' lagi!</span><span class="deal-timer" data-exp="'+d.expMin+'">--:--</span></div><div class="deal-body"><div class="deal-merchant">'+d.merchant+'</div><div class="deal-name">'+d.name+'</div><div class="deal-meta"><div class="deal-price"><span class="deal-old">'+d.orig+'</span><span class="deal-new">'+d.price+'</span></div><span class="deal-sold">-'+discountPct+'%</span></div><div class="deal-bar"><div class="deal-fill" style="width:'+d.fill+'%"></div></div><div class="deal-pct-sold">'+d.fill+'% terjual</div></div>';
+    dealsGrid.appendChild(card);
+  });
+
+  // ===== COUNTDOWN TIMERS =====
+  function startTimers() {
+    var timers = document.querySelectorAll(".deal-timer[data-exp]");
+    var startMs = Date.now();
+    function tick() {
+      var elapsed = Math.floor((Date.now() - startMs) / 1000);
+      timers.forEach(function(t) {
+        var total = parseInt(t.dataset.exp) * 60;
+        var remaining = Math.max(0, total - elapsed);
+        var h = Math.floor(remaining/3600), m = Math.floor((remaining%3600)/60), s = remaining%60;
+        if (h > 0) t.textContent = h+"j "+padZero(m)+"m";
+        else t.textContent = padZero(m)+":"+padZero(s);
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+  startTimers();
+
+  // ===== NAV SCROLL =====
+  var nav = document.getElementById("navbar");
+  window.addEventListener("scroll", function() {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, {passive:true});
+
+  // ===== DRAWER =====
+  function openDrawer() {
+    document.getElementById("drawer").classList.add("active");
+    document.getElementById("drawerOverlay").classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeDrawer() {
+    document.getElementById("drawer").classList.remove("active");
+    document.getElementById("drawerOverlay").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  document.getElementById("navToggleBtn").addEventListener("click", openDrawer);
+  document.getElementById("drawerClose").addEventListener("click", closeDrawer);
+  document.getElementById("drawerOverlay").addEventListener("click", closeDrawer);
+  document.querySelectorAll(".drawer a").forEach(function(a) {
+    a.addEventListener("click", closeDrawer);
+  });
+
+  // ===== THEME TOGGLE =====
+  var html = document.documentElement;
+  var savedTheme = localStorage.getItem("jh-theme") || "light";
+  html.setAttribute("data-theme", savedTheme);
+
+  function setTheme(t) {
+    html.setAttribute("data-theme", t);
+    localStorage.setItem("jh-theme", t);
+    var icon = t === "dark" ? "&#9790;" : "&#127765;";
+    document.getElementById("themeToggle").innerHTML = icon;
+    var fcTheme = document.getElementById("fcTheme");
+    if (fcTheme) fcTheme.innerHTML = icon;
+  }
+  document.getElementById("themeToggle").addEventListener("click", function() {
+    setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+  var fcTheme = document.getElementById("fcTheme");
+  if (fcTheme) fcTheme.addEventListener("click", function() {
+    setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+  setTheme(savedTheme);
+
+  // ===== LANGUAGE TOGGLE (FULL i18n) =====
+  var lang = localStorage.getItem("jh-lang") || "id";
+  var langs = {id:"EN", en:"ID"};
+
+  var translations = {
+    // Navigation
+    nav_how:        {id:"Cara Kerja",           en:"How It Works"},
+    nav_deals:      {id:"Promo Hari Ini",      en:"Today's Deals"},
+    nav_impact:     {id:"Dampak",              en:"Impact"},
+    nav_merchant:   {id:"Mitra",               en:"Partners"},
+    nav_testimonials:{id:"Ulasan",            en:"Reviews"},
+    drawer_merchant:{id:"Jadi Mitra",          en:"Become a Partner"},
+    drawer_download:{id:"Unduh Aplikasi",      en:"Download App"},
+    nav_cta:        {id:"Download Gratis",     en:"Free Download"},
+
+    // Hero
+    hero_sub: {
+      id:"Makanan berkualitas dari restoran favorit — sampai 80% lebih hemat.<br>Setiap pickup = makanan terselamatkan + dompet senang.",
+      en:"Quality food from your favorite spots — up to 80% off.<br>Every pickup = food saved + money in your pocket."
+    },
+    hero_cta: {
+      id:"&#128229; Download Gratis &mdash; 3 Pickup Gratis Menunggu!",
+      en:"&#128229; Free Download — 3 Free Pickups Await!"
+    },
+
+    // How It Works
+    how_tag:  {id:"&#128203; Cuma 3 Langkah",     en:"&#128203; 3 Simple Steps"},
+    how_title: {id:"Mulai Hemat dalam 3 Menit",   en:"Start Saving in 3 Minutes"},
+    how_sub:  {id:"Buka app → pilih makanan → hemat. Tanpa kartu kredit, tanpa biaya tersembunyi.", en:"Open app → pick your bag → save. No credit card, no hidden fees."},
+    step1_title:{id:"Pilih Makanan",              en:"Browse Food"},
+    step1_desc:{id:"Cari makanan berkualitas dari toko & restoran di sekitarmu. Filter berdasarkan lokasi, jenis, dan harga — pickup hari ini.", en:"Find quality food from stores near you. Filter by location, type, and price — pick up today."},
+    step2_title:{id:"Beli Surprise Bag",         en:"Buy a Surprise Bag"},
+    step2_desc:{id:"Paket makanan premium dengan harga hingga 80% lebih murah. Isinya? Menu restoran di akhir hari — selalu berkualitas, selalu segar. Surprise, tapi kualitasnya pasti.", en:"Premium food bags at up to 80% off. What's inside? That day's menu — always quality, always fresh. A surprise, but quality is guaranteed."},
+    step3_title:{id:"Ambil & Hemat",             en:"Pick Up & Save"},
+    step3_desc:{id:"Tunjukkan kode QR di merchant, ambil makananmu, dan nikmati. Gampang — kurang dari 2 menit.", en:"Show your QR code at the store, grab your bag, enjoy. Easy — under 2 minutes."},
+    surprise_title:{id:"&#128161; Kenapa Bisa Lebih Murah?", en:"&#128161; Why Is It So Cheap?"},
+    surprise_desc:{id:"Toko menjual sisa makanan di luar jam sibuk — sebelum expired dan sebelum terbuang. Kamu dapat makanan berkualitas dengan harga diskon besar. Win-win nyata.", en:"Stores sell their surplus at the end of service — before it expires, before it goes to waste. You get quality food at a steep discount. Real win-win."},
+
+    // Deals
+    deals_tag:  {id:"&#128293; Habis Hari Ini",           en:"&#128293; Gone Today"},
+    deals_title:{id:"Paket Murah — Tersisa Beberapa Saja", en:"Cheap Bags — Only a Few Left"},
+    deals_live: {id:"Stok real-time &mdash; perbarui otomatis", en:"Live inventory &mdash; auto-updates"},
+
+    // Impact
+    impact_tag:   {id:"&#127793; Dampak Nyata",             en:"&#127793; Real Impact"},
+    impact_title: {id:"Kamu Yang Membuat Perubahan Ini",     en:"You Made This Happen"},
+    impact_sub:   {id:"Setiap pickup = makanan terselamatkan, CO₂ dicegah, dompet aman. Semua terukur.", en:"Every pickup = food saved, CO₂ avoided, wallet happy. All measurable."},
+    impact_personal_title:{id:"&#127793; Ini Kontribusimu — Dampak Personal", en:"&#127793; Your Impact — Personal"},
+    impact_card_cta:{id:"&#128247; Download Impact Card — Siap Share ke WhatsApp", en:"&#128247; Download Impact Card — Ready for WhatsApp"},
+
+    // Referral
+    ref_eyebrow:{id:"&#128081; Teman Kamu Sudah Hemat — Sekarang Giliranmu", en:"&#128081; Your Friends Are Saving — Now It's Your Turn"},
+    ref_step1_title:{id:"Share Link Referral", en:"Share Your Referral Link"},
+    ref_step1_desc:{id:"Kirim link ke teman via WhatsApp, Instagram, atau SMS", en:"Send link to friends via WhatsApp, Instagram, or SMS"},
+    ref_step2_title:{id:"Teman Download & Pakai Kode", en:"Friend Downloads & Uses Code"},
+    ref_step2_desc:{id:"Mereka download app, daftar, dan gunakan 3 pickup gratis dari akun mereka", en:"They download the app, sign up, and use 3 free pickups from their account"},
+    ref_step3_title:{id:"Kamu Dapat 3 Pickup", en:"You Get 3 Free Pickups"},
+    ref_step3_desc:{id:"Langsung masuk ke akunmu — tanpa minimum order, tanpa batas waktu", en:"Straight to your account — no minimum order, no expiry"},
+    ref_progress_label:{id:"Progress: 1 dari 3 teman (33%)", en:"Progress: 1 of 3 friends (33%)"},
+    ref_progress_status:{id:"Ajak 2 teman lagi = 6 pickup gratis!", en:"Refer 2 more friends = 6 free pickups!"},
+
+    // App CTA
+    cta_tag:  {id:"&#128229; Download Sekarang",  en:"&#128229; Download Now"},
+    cta_title:{id:"Mulai Hemat dalam 3 Menit",   en:"Start Saving in 3 Minutes"},
+    cta_sub:  {id:"Free download. Tidak ada biaya tersembunyi. 3 pickup gratis pertama menunggumu.", en:"Free download. No hidden fees. 3 free pickups are waiting."},
+    cta_urgency:{id:"&#128293; Offer baru: 3 pickup gratis untuk pengguna baru hari ini — aktifkan sekarang", en:"&#128293; New offer: 3 free pickups for new users today — activate now"},
+
+    // Footer
+    footer_tagline:{id:"Selamatkan makanan, hemat uang, bantu planet.<br>One bag at a time.", en:"Save great food, save money, help the planet.<br>One bag at a time."},
+    footer_col1_title:{id:"Jago Hemat", en:"Jago Hemat"},
+    footer_col2_title:{id:"Merchant",   en:"Partners"},
+    footer_col3_title:{id:"Perusahaan",en:"Company"},
+
+    // Sticky bar
+    sticky_text:{id:"Mulai hemat dalam 3 menit —", en:"Start saving in 3 minutes —"},
+    sticky_cta: {id:"&#128229; Download Gratis", en:"&#128229; Free Download"},
+  };
+
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem("jh-lang", l);
+    document.getElementById("langToggle").textContent = langs[l];
+    var fcLang = document.getElementById("fcLang");
+    if (fcLang) fcLang.textContent = langs[l];
+    // Translate all data-i18n elements
+    document.querySelectorAll("[data-i18n]").forEach(function(el) {
+      var key = el.getAttribute("data-i18n");
+      if (translations[key] && translations[key][l]) {
+        // Preserve emoji entities — innerHTML handles them
+        el.innerHTML = translations[key][l];
+      }
+    });
+  }
+  document.getElementById("langToggle").addEventListener("click", function() {
+    setLang(lang === "id" ? "en" : "id");
+  });
+  var fcLang = document.getElementById("fcLang");
+  if (fcLang) fcLang.addEventListener("click", function() {
+    setLang(lang === "id" ? "en" : "id");
+  });
+  setLang(lang);
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  document.querySelectorAll("a[href^=#]").forEach(function(a) {
+    a.addEventListener("click", function(e) {
+      var target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        var offset = 72;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({top:top, behavior:"smooth"});
+      }
+    });
+  });
+
+  // ===== HERO BADGE ANIMATION =====
+  var badges = [
+    "&#127942; #1 Food Waste Solution di ASEAN",
+    "&#128293; 127+ paket aktif di sekitarmu sekarang",
+    "&#127793; 10JT+ kg makanan diselamatkan komunitas",
+    "&#128176; Rata-rata hemat Rp 280Rb/bulan"
+  ];
+  var badgeEl = document.getElementById("heroBadge");
+  if (badgeEl) {
+    badgeEl.style.transition = "opacity .25s";
+    var bi = 0;
+    setInterval(function() {
+      bi = (bi + 1) % badges.length;
+      badgeEl.style.opacity = "0";
+      setTimeout(function() {
+        badgeEl.innerHTML = badges[bi];
+        badgeEl.style.opacity = "1";
+      }, 250);
+    }, 3500);
+  }
+})();
+
+/* FAQ ACCORDION */
+function toggleFaq(el){const item=el.closest(".faq-item");const isOpen=item.classList.toggle("open");el.setAttribute("aria-expanded",isOpen)}
+
+/* SHARE IMPACT CARD — opens WhatsApp with pre-written impact message */
+function shareImpactCard(){var name=prompt("Nama kamu (untuk Impact Card):")||"Pengguna Jago Hemat";var food="12.4 kg";var co2="25.8 kg";var trees="8 pohon";var savings="Rp 840K";var msg="🌱 Impact Card Saya — Jago Hemat\n\n👤 "+name+"\n🍎 "+food+" makanan diselamatkan\n🌍 "+co2+" CO₂ dicegah\n🌳 Setara "+trees+" ditanam\n💰 Hemat: "+savings+"\n\n---\nSelamatkan makanan, hemat uang, bantu planet!\nDownload: https://jagohemat.com";window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank")}
+
+/* REQUEST ESG REPORT — opens WhatsApp inquiry for merchant ESG report */
+function requestESGReport(){var msg="Halo Jago Hemat! Saya ingin melihat contoh Laporan Dampak (ESG Report) untuk merchant.";window.open("https://wa.me/6281234567890?text="+encodeURIComponent(msg),"_blank")}
+
+/* MERCHANT FORM + ROI CALC */
+document.getElementById("wasteKg")?.addEventListener("input",function(){this.value=Math.max(0,this.value);updateROI()});
+document.getElementById("pricePerKg")?.addEventListener("input",function(){this.value=Math.max(0,this.value);updateROI()});
+function updateROI(){var kg=parseFloat(document.getElementById("wasteKg")?.value)||0;var price=parseFloat(document.getElementById("pricePerKg")?.value)||0;kg=Math.max(0,kg);price=Math.max(0,price);var monthly=kg*price*30;var foodSaved=kg*30;var co2Prevented=(foodSaved*2.5).toFixed(0);var mealsEquivalent=Math.round(foodSaved/0.3);document.getElementById("roiResult").textContent="Rp "+monthly.toLocaleString("id-ID");document.getElementById("revenueRecovered").textContent="Rp "+Math.round(monthly*0.8).toLocaleString("id-ID");document.getElementById("foodSaved").textContent=foodSaved.toLocaleString("id-ID")+" kg";document.getElementById("co2Prevented").textContent=co2Prevented+" kg";document.getElementById("mealsEquivalent").textContent=mealsEquivalent.toLocaleString("id-ID")+" meals"}
+function submitMerchantForm(e){e.preventDefault();var form=e.target;var fd=new FormData(form);var name=fd.get("store_name")||"N/A";var email=fd.get("email")||"N/A";var whatsapp=fd.get("whatsapp")||"N/A";var storeType=fd.get("store_type")||"N/A";var city=fd.get("city")||"N/A";var phoneRegex=/^[\+]?[(]?[0-9]{2,4}[)]?[-\s\.]?[0-9]{2,4}[-\s\.]?[0-9]{2,9}$/;if(!phoneRegex.test(whatsapp)){alert("Mohon masukkan nomor WhatsApp yang valid (contoh: 0812 3456 7890)");return}var msg="🍽️ *Pendaftaran Merchant — Jago Hemat*\n\n"+"🏪 Nama Toko: "+name+"\n"+"📧 Email: "+email+"\n"+"📱 WhatsApp: "+whatsapp+"\n"+"🏷️ Jenis Toko: "+storeType+"\n"+"📍 Kota: "+city+"\n\n"+"Saya ingin bergabung sebagai merchant Jago Hemat!";var waUrl="https://wa.me/6281234567890?text="+encodeURIComponent(msg);window.open(waUrl,"_blank");var btn=form.querySelector(".biz-submit");btn.innerHTML="✅ Terkirim! Kami akan hubungi dalam 24 jam.";btn.disabled=true;setTimeout(function(){btn.disabled=false;btn.innerHTML="Daftar Gratis Sekarang — 0 Biaya"},6000)}
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  var revealObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el){revealObs.observe(el);});
+
+  /* Counter animation */
+  function animateCounter(el,target,suffix,duration){
+    var start=0;
+    var increment=target/(duration/16);
+    var prefix = el.textContent.match(/^[^0-9]*/)[0];
+    var decimal = String(target).includes('.');
+    var step=function(){
+      start=Math.min(start+increment,target);
+      var display = decimal ? start.toFixed(1) : Math.round(start);
+      el.textContent = prefix + display + suffix;
+      if(start<target)requestAnimationFrame(step);
+    };
+    step();
+  }
+  var counterObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el=e.target;
+        var text=el.textContent.trim();
+        var num=parseFloat(text.replace(/[^0-9.]/g,''));
+        var suffix=text.replace(/[0-9.,]/g,'');
+        if(!isNaN(num)&&num>0){
+          el._orig=el.textContent;
+          animateCounter(el,num,suffix,1500);
+        }
+        counterObs.unobserve(el);
+      }
+    });
+  },{threshold:0.5});
+  document.querySelectorAll('.impact-val,.ibs-val,.esg-stat-val').forEach(function(el){counterObs.observe(el);});
+
+  /* Parallax — handled by second IIFE with prefers-reduced-motion check */
+
+  /* Deal cards stagger reveal on load */
+  setTimeout(function(){
+    var cards=document.querySelectorAll('.deal-card');
+    cards.forEach(function(card,i){
+      card.classList.add('reveal');
+      card.style.transitionDelay=(i*0.08)+'s';
+    });
+    cards.forEach(function(card){revealObs.observe(card);});
+  },100);
+})();
+
+/* ── PREMIUM INTERACTIONS JS ── */
+(function(){
+  /* SCROLL PROGRESS BAR */
+  var scrollProg = document.getElementById('scrollProgress');
+  if (scrollProg) {
+    window.addEventListener('scroll', function() {
+      var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      scrollProg.style.width = pct + '%';
+    }, {passive:true});
+  }
+
+  /* STICKY CTA BAR */
+  var stickyCta = document.getElementById('stickyCta');
+  var heroSection = document.getElementById('hero');
+  if (stickyCta && heroSection) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > heroSection.offsetHeight * 0.6) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    }, {passive:true});
+  }
+
+  /* NAV ACTIVE SECTION */
+  var navLinks = document.querySelectorAll('.nav-links a');
+  var sections = document.querySelectorAll('section[id]');
+  var navObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        navLinks.forEach(function(a) { a.classList.remove('active'); });
+        var activeLink = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, {threshold:0.3, rootMargin:'-72px 0px 0px 0px'});
+  sections.forEach(function(s) { if (s.id) navObs.observe(s); });
+
+  /* REFERRAL PROGRESS ANIMATION */
+  var refFill = document.querySelector('.ref-prog-fill');
+  if (refFill) {
+    var refObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          refFill.style.width = '0%';
+          setTimeout(function() { refFill.style.width = '33%'; }, 300);
+          refObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.5});
+    refObs.observe(refFill.closest('.ref-progress') || refFill);
+  }
+
+  /* DEAL CARD TILT */
+  var dealCards = document.querySelectorAll('.deal-card');
+  dealCards.forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = (y - centerY) / centerY * -3;
+      var rotateY = (x - centerX) / centerX * 3;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-6px)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = '';
+    });
+  });
+
+  /* COUNTER OBSERVER (uses animateCounter already defined in first IIFE) */
+  var counterObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var el = e.target;
+        var orig = el.getAttribute('data-orig') || el.textContent.trim();
+        if (!el.getAttribute('data-orig')) el.setAttribute('data-orig', orig);
+        var text = orig;
+        var numMatch = text.match(/^([Rp\s]*)([0-9.,]+)(.*)/);
+        if (numMatch) {
+          var prefix = numMatch[1].trim();
+          var num = parseFloat(numMatch[2].replace(/,/g, ''));
+          var suffix = numMatch[3].trim();
+          el._orig = orig;
+          animateCounter(el, num, ' ' + suffix, 2000);
+        }
+        counterObs.unobserve(el);
+      }
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('.impact-val,.ibs-val,.esg-stat-val').forEach(function(el) {
+    if (!el.getAttribute('data-orig')) el.setAttribute('data-orig', el.textContent.trim());
+    counterObs.observe(el);
+  });
+
+  /* PARALLAX — respects prefers-reduced-motion */
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    window.addEventListener('scroll', function() {
+      var sy = window.scrollY;
+      var heroBg = document.querySelector('.hero-bg');
+      if (heroBg) heroBg.style.transform = 'translateY(' + (sy * 0.3) + 'px)';
+      document.documentElement.style.setProperty('--scroll-y', sy + 'px');
+    }, {passive:true});
+  }
+
+  /* SOCIAL PROOF TOAST — fires when deals section enters view */
+  var socialToast = document.getElementById('socialProofToast');
+  if (socialToast) {
+    var toastShown = false;
+    var toastObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting && !toastShown) {
+          toastShown = true;
+          // Randomize count slightly for authenticity
+          var num = 38 + Math.floor(Math.random() * 20);
+          socialToast.innerHTML = '&#128293; +' + num + ' orang mengundi makanan dalam 1 jam terakhir';
+          setTimeout(function() { socialToast.classList.add('visible'); }, 800);
+          setTimeout(function() { socialToast.classList.remove('visible'); }, 5500);
+          toastObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.3});
+    var dealsSection = document.getElementById('deals');
+    if (dealsSection) toastObs.observe(dealsSection);
+  }
+
+  /* STORE BADGE STAGGER on CTA section enter */
+  var badgeObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.store-badge-animate').forEach(function(b) {
+          b.classList.add('visible');
+        });
+        badgeObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.3});
+  var appCta = document.querySelector('.store-badges');
+  if (appCta) badgeObs.observe(appCta);
+
+  /* HERO SLIDESHOW (2-image fade) */
+  var mainImg = document.querySelector('.hero-main-img');
+  var altImg = document.querySelector('.hero-alt-img');
+  var dots = document.querySelectorAll('.hero-dot');
+  if (mainImg && altImg) {
+    var showingMain = true;
+    setInterval(function() {
+      if (showingMain) {
+        mainImg.style.opacity = '0';
+        altImg.style.opacity = '1';
+        if (dots[0]) dots[0].classList.remove('active');
+        if (dots[1]) dots[1].classList.add('active');
+      } else {
+        altImg.style.opacity = '0';
+        mainImg.style.opacity = '1';
+        if (dots[1]) dots[1].classList.remove('active');
+        if (dots[0]) dots[0].classList.add('active');
+      }
+      showingMain = !showingMain;
+    }, 4000);
+  }
+
+  /* SCROLL REVEAL for dynamically added cards */
+  var revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(ev) {
+      if (ev.isIntersecting) {
+        ev.target.classList.add('visible');
+        revealObs.unobserve(ev.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el) {
+    revealObs.observe(el);
+  });
+})();
+
+</script>
+</body>
+</html>
