@@ -190,6 +190,13 @@ img{max-width:100%;height:auto}
 .store-locator input::placeholder{color:var(--text-muted)}
 .store-locator button{background:var(--gradient);border:none;padding:14px 22px;font-family:var(--font-head);font-weight:600;font-size:14px;color:#fff;cursor:pointer;white-space:nowrap;transition:opacity 0.2s;flex-shrink:0}
 .store-locator button:hover{opacity:0.85}
+.referral-banner{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);
+  border-radius:100px;padding:8px 18px;font-size:13px;color:var(--text-muted);
+  margin-bottom:20px;animation:badgePulse 2s ease-in-out infinite;
+}
+.referral-banner strong{color:var(--accent);font-weight:700}
 .hero-counter{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted);margin-bottom:28px}
 .hero-counter strong{color:var(--accent)}
 .hero-counter[data-counter]{color:var(--text)}
@@ -598,6 +605,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:60px 0 
       <div class="store-locator">
         <input type="text" placeholder="Enter your city or ZIP code..." data-placeholder-en="Enter your city or ZIP code..." data-placeholder-id="Masukkan kota atau kode pos Anda..." id="locatorInput">
         <button onclick="alert('Map feature coming soon!')" data-lang-en="Find Deals →" data-lang-id="Cari Promo →">Find Deals →</button>
+      </div>
+
+      <!-- REFERRAL INCENTIVE v3 -->
+      <div class="referral-banner">
+        <span>🎁 <strong data-lang-en="Download free — Get 3 free deliveries!" data-lang-id="Unduh gratis — Dapat 3 pengiriman gratis!">Download free — Get 3 free deliveries!</strong></span>
       </div>
 
       <div class="hero-counter">

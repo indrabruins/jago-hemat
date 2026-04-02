@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Price tag / settings icon - step 2: set price & stock -->
+  <g fill="none" stroke="#01875f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Price tag body -->
+    <path d="M10 10 L38 10 L42 18 L38 38 L10 38 L6 18 Z"/>
+    <!-- Tag hole -->
+    <circle cx="16" cy="18" r="4"/>
+    <!-- String from tag -->
+    <path d="M16 14 C16 14 14 8 20 6"/>
+    <!-- Price line inside tag -->
+    <line x1="20" y1="22" x2="36" y2="22"/>
+    <line x1="20" y1="28" x2="30" y2="28"/>
+    <!-- Settings/gear suggestion (small gear at corner) -->
+    <circle cx="36" cy="36" r="5"/>
+    <circle cx="36" cy="36" r="2" fill="#01875f"/>
+    <line x1="36" y1="31" x2="36" y2="33"/>
+    <line x1="36" y1="39" x2="36" y2="41"/>
+    <line x1="31" y1="36" x2="33" y2="36"/>
+    <line x1="39" y1="36" x2="41" y2="36"/>
+  </g>
+</svg>

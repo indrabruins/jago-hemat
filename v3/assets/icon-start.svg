@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Checkmark / store icon - step 3: start selling -->
+  <g fill="none" stroke="#01875f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Circle background -->
+    <circle cx="24" cy="24" r="20" fill="#01875f" opacity="0.1"/>
+    <!-- Store awning -->
+    <path d="M6 20 L12 12 L36 12 L42 20"/>
+    <!-- Store body -->
+    <rect x="10" y="20" width="28" height="20" rx="2"/>
+    <!-- Storefront / window -->
+    <rect x="14" y="24" width="20" height="12" rx="1"/>
+    <!-- Checkmark overlay -->
+    <path d="M18 30 L22 34 L32 22" stroke-width="3.5"/>
+    <!-- Awning stripes hint -->
+    <line x1="12" y1="16" x2="16" y2="12" stroke-width="2" opacity="0.5"/>
+    <line x1="24" y1="12" x2="24" y2="16" stroke-width="2" opacity="0.5"/>
+    <line x1="32" y1="12" x2="36" y2="16" stroke-width="2" opacity="0.5"/>
+  </g>
+</svg>

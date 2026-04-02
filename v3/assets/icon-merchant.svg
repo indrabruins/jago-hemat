@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Store / merchant building icon -->
+  <g fill="none" stroke="#01875f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Building base -->
+    <rect x="8" y="18" width="32" height="26" rx="3"/>
+    <!-- Roof / awning -->
+    <path d="M4 18 L24 6 L44 18"/>
+    <!-- Door -->
+    <rect x="19" y="30" width="10" height="14" rx="2"/>
+    <!-- Window left -->
+    <rect x="11" y="24" width="6" height="6" rx="1"/>
+    <!-- Window right -->
+    <rect x="31" y="24" width="6" height="6" rx="1"/>
+    <!-- Store sign line -->
+    <line x1="12" y1="15" x2="36" y2="15"/>
+    <!-- People silhouettes (merchants) -->
+    <circle cx="17" cy="40" r="2" fill="#01875f" stroke="none"/>
+    <line x1="17" y1="42" x2="17" y2="46" stroke-width="2.5"/>
+    <circle cx="31" cy="40" r="2" fill="#01875f" stroke="none"/>
+    <line x1="31" y1="42" x2="31" y2="46" stroke-width="2.5"/>
+  </g>
+</svg>

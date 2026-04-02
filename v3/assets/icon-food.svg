@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Leaf / food saved icon -->
+  <g fill="none" stroke="#01875f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main leaf -->
+    <path d="M24 6 C24 6 38 10 38 24 C38 34 28 42 24 44 C20 42 10 34 10 24 C10 14 18 8 24 6 Z"/>
+    <!-- Leaf vein -->
+    <path d="M24 12 L24 38"/>
+    <path d="M24 20 L17 15"/>
+    <path d="M24 28 L17 23"/>
+    <path d="M24 20 L31 15"/>
+    <path d="M24 28 L31 23"/>
+  </g>
+  <!-- Small food dot accent -->
+  <circle cx="34" cy="14" r="2" fill="#01875f" stroke="none" opacity="0.5"/>
+</svg>

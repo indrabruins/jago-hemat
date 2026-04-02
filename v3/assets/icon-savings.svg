@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Coin / wallet / savings icon -->
+  <g fill="none" stroke="#01875f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Coin outer -->
+    <circle cx="24" cy="24" r="18"/>
+    <!-- Coin inner ring -->
+    <circle cx="24" cy="24" r="13"/>
+    <!-- Rp symbol (Indonesian Rupiah style) -->
+    <path d="M20 17 L20 31" stroke-width="2.5"/>
+    <path d="M20 17 L28 17 C29.1 17 30 17.9 30 19 C30 20.1 29.1 21 28 21 L20 21"/>
+    <path d="M20 21 L28 21 C29.1 21 30 21.9 30 23 C30 24.1 29.1 25 28 25 L20 25 L20 31"/>
+    <!-- Sparkle accent -->
+    <line x1="37" y1="8" x2="42" y2="3" stroke-width="2.5"/>
+    <line x1="42" y1="3" x2="45" y2="8" stroke-width="2.5"/>
+    <line x1="39" y1="3" x2="42" y2="3" stroke-width="2.5"/>
+    <line x1="42" y1="3" x2="42" y2="8" stroke-width="2.5"/>
+  </g>
+</svg>
